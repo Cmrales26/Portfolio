@@ -1,42 +1,421 @@
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;700&display=swap");
+:root {
+  /* DARK */
+  --darkBackground: #272733;
+  --darkTextColor: #f5f5f5;
+  --darkInputColor: #585870;
+
+  /* Light */
+  --lightBackground: #fafafa;
+  --lightTextColor: #1e1e1e;
+  --lightInputColor: #cdcdcd;
+
+  --textaccent: #ffa500;
+  --primaryButton: #208b59;
+  --secondButton: #6464e9;
+
+  --errorcolor: #e04848;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  background-color: var(--darkBackground);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Onest", sans-serif;
+}
+#Portfolio {
+  width: 800px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+nav {
+  margin-top: 2rem;
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: end;
+    list-style: none;
+    .ThemeSelector {
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
   }
+}
+
+header {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  figure {
+    /* border: 1px solid red; */
+    height: fit-content;
+    border-radius: 50%;
+    img {
+      border-radius: 50%;
+      width: 200px;
+    }
+  }
+  .content {
+    margin-left: 3rem;
+    h1 {
+      font-size: 50px;
+      color: var(--darkTextColor);
+    }
+    .social {
+      p {
+        color: var(--textaccent);
+      }
+      display: flex;
+      gap: 1rem;
+    }
+  }
+  .mystatus {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    .avilable {
+      align-items: center;
+      border-radius: 10px;
+      padding: 0.5rem 1rem;
+      height: fit-content;
+      gap: 0.5rem;
+      background-color: var(--primaryButton);
+      display: flex;
+      color: var(--darkTextColor);
+    }
+    .resume {
+      border-radius: 10px;
+      padding: 0.5rem 1rem;
+      height: fit-content;
+      background-color: var(--secondButton);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--darkTextColor);
+      a {
+        text-decoration: none;
+        color: var(--darkTextColor);
+      }
+    }
+  }
+}
+
+#Aboutme {
+  margin-top: 4rem;
+  h1 {
+    font-size: 30px;
+    color: var(--textaccent);
+    margin-bottom: 1rem;
+  }
+  p {
+    color: var(--darkTextColor);
+    line-height: 1.6;
+  }
+  .accenttext {
+    color: var(--textaccent);
+  }
+}
+
+#Projects {
+  margin-top: 2rem;
+  h1 {
+    font-size: 30px;
+    color: var(--textaccent);
+    margin-bottom: 1rem;
+  }
+  .project {
+    position: relative;
+  }
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+    .projectimga {
+      width: 370px;
+      border-radius: 10px;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      backface-visibility: hidden;
+      transition: 0.5s ease;
+    }
+  }
+  .projectHover {
+    transition: 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translate(-0%, -0%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 1rem;
+    .titleandlink {
+      margin-bottom: 2px;
+      display: flex;
+      justify-content: space-between;
+      img {
+        width: 20px;
+      }
+      h3 {
+        color: var(--textaccent);
+      }
+    }
+    .pageinfo {
+      color: var(--lightBackground);
+      font-size: 14px;
+    }
+    .techs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+      gap: 20px;
+      .techicon {
+        width: 25px;
+        /* border: 1px solid red; */
+      }
+      .pythonicon {
+        width: 60px;
+        margin-right: -20px;
+      }
+    }
+  }
+  .project:hover .projectimga {
+    opacity: 0.2;
+  }
+
+  .project:hover .projectHover {
+    opacity: 1;
+  }
+}
+
+#Skills {
+  h1 {
+    color: var(--textaccent);
+    font-size: 30px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  .scroller {
+    max-width: 100%;
+
+    .scroller__inner {
+      padding-block: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      list-style: none;
+      gap: 7rem;
+
+      img {
+        width: 100px;
+      }
+    }
+  }
+
+  .scroller[data-animated="true"] {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(
+      90deg,
+      transparent,
+      white 20%,
+      white 80%,
+      transparent
+    );
+    mask: linear-gradient(
+      90deg,
+      transparent,
+      white 20%,
+      white 80%,
+      transparent
+    );
+  }
+
+  .scroller[data-animated="true"] .scroller__inner {
+    width: max-content;
+    /* border: 3px solid red; */
+    flex-wrap: nowrap;
+    animation: scroll 40s linear infinite;
+  }
+}
+
+@keyframes scroll {
   to {
-    transform: rotate(360deg);
+    transform: translate(calc(-50% - 3.5rem));
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+#contact {
+  margin-top: 2rem;
+  .error {
+    color: var(--errorcolor);
+  }
+  .email {
+    width: 100% !important;
+  }
+  .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border: none !important;
+  }
+  .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 30px;
+    color: var(--textaccent);
+  }
+  .css-xn6ruc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+  }
+  label {
+    color: var(--darkTextColor);
+  }
+  input,
+  textarea {
+    width: 100%;
+    background-color: var(--darkInputColor);
+    border-radius: 10px;
+    color: var(--darkTextColor);
+    text-indent: 1rem;
+    padding-top: 1rem;
+  }
+  .message {
+    width: 100% !important;
+    .css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root {
+      padding: 0;
+    }
+  }
+  button {
+    background-color: var(--primaryButton);
   }
 }
 
-.card {
-  padding: 2em;
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  hr {
+    border: none !important;
+    height: 1px;
+    background-color: var(--textaccent);
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+  p {
+    color: var(--darkTextColor);
+  }
+  a {
+    text-decoration: none;
+    color: var(--textaccent);
+  }
 }
 
-.read-the-docs {
-  color: #888;
+/* RESPONSIVE */
+
+@media screen and (max-width: 800px) {
+  #Portfolio {
+    width: 100%;
+  }
+  #root {
+    padding: 2rem;
+  }
+  #Projects {
+    .projects {
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 615px) {
+  nav {
+    margin: 0px;
+  }
+  .content {
+    margin-left: 0px !important;
+  }
+  header {
+    width: 100%;
+    flex-direction: column;
+    h1 {
+      font-size: 20px;
+    }
+    .social {
+      justify-content: center;
+    }
+    .mystatus {
+      justify-content: center;
+    }
+  }
+
+  #Skills {
+    .scroller {
+      .scroller__inner {
+        gap: 2rem;
+        img {
+          width: 50px;
+        }
+      }
+    }
+  }
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 1rem));
+    }
+  }
+  footer {
+    margin: 0rem 0;
+  }
+}
+@media screen and (max-width: 425px) {
+  #Portfolio {
+    width: 100%;
+  }
+  .content {
+    h1 {
+      font-size: 40px !important;
+    }
+  }
+  #Projects {
+    .projects {
+      justify-content: center;
+      .projectimga {
+        width: 100%;
+      }
+    }
+    .projectHover {
+      height: fit-content;
+      width: 100%;
+      p {
+        font-size: 12px;
+      }
+      .techs {
+        flex-wrap: wrap;
+        .techicon {
+          width: 20px;
+        }
+        .pythonicon {
+          width: 45px;
+        }
+      }
+    }
+  }
 }
