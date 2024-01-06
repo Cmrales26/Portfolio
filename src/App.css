@@ -23,12 +23,33 @@
   box-sizing: border-box;
 }
 
-#root {
+#app {
   background-color: var(--darkBackground);
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Onest", sans-serif;
+  transition: ease-in-out 0.5s;
+}
+#app[theme="light"] {
+  background-color: var(--lightBackground);
+  h1 {
+    color: #1e1e1e;
+  }
+  p {
+    color: var(--lightTextColor);
+  }
+  label {
+    color: var(--lightTextColor);
+  }
+  input {
+    color: var(--lightTextColor);
+    background-color: var(--lightInputColor);
+  }
+  textarea {
+    color: var(--lightTextColor);
+    background-color: var(--lightInputColor);
+  }
 }
 #Portfolio {
   width: 800px;
@@ -72,7 +93,7 @@ header {
     }
     .social {
       p {
-        color: var(--textaccent);
+        color: var(--textaccent) !important;
       }
       display: flex;
       gap: 1rem;
@@ -90,7 +111,7 @@ header {
       gap: 0.5rem;
       background-color: var(--primaryButton);
       display: flex;
-      color: var(--darkTextColor);
+      color: var(--darkTextColor) !important;
     }
     .resume {
       border-radius: 10px;
@@ -113,7 +134,7 @@ header {
   margin-top: 4rem;
   h1 {
     font-size: 30px;
-    color: var(--textaccent);
+    color: var(--textaccent) !important;
     margin-bottom: 1rem;
   }
   p {
@@ -129,7 +150,7 @@ header {
   margin-top: 2rem;
   h1 {
     font-size: 30px;
-    color: var(--textaccent);
+    color: var(--textaccent) !important;
     margin-bottom: 1rem;
   }
   .project {
@@ -160,11 +181,14 @@ header {
     left: 0%;
     transform: translate(-0%, -0%);
     -ms-transform: translate(-50%, -50%);
+    background-color: var(--darkBackground);
+    height: 220px;
+    border-radius: 10px;
     padding: 1rem;
     .titleandlink {
       margin-bottom: 2px;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-between; 
       img {
         width: 20px;
       }
@@ -173,7 +197,9 @@ header {
       }
     }
     .pageinfo {
-      color: var(--lightBackground);
+      p {
+        color: var(--lightBackground) !important;
+      }
       font-size: 14px;
     }
     .techs {
@@ -203,7 +229,7 @@ header {
 
 #Skills {
   h1 {
-    color: var(--textaccent);
+    color: var(--textaccent) !important;
     font-size: 30px;
     margin-bottom: 2rem;
     margin-top: 2rem;
@@ -216,7 +242,7 @@ header {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
+      /* justify-content: center; */
       list-style: none;
       gap: 7rem;
 
@@ -246,9 +272,8 @@ header {
 
   .scroller[data-animated="true"] .scroller__inner {
     width: max-content;
-    /* border: 3px solid red; */
     flex-wrap: nowrap;
-    animation: scroll 40s linear infinite;
+    animation: scroll 5s linear infinite;
   }
 }
 
@@ -275,7 +300,7 @@ header {
 
   h1 {
     font-size: 30px;
-    color: var(--textaccent);
+    color: var(--textaccent) !important;
   }
   .css-xn6ruc {
     display: flex;
@@ -335,7 +360,7 @@ footer {
   #Portfolio {
     width: 100%;
   }
-  #root {
+  #app {
     padding: 2rem;
   }
   #Projects {
@@ -402,7 +427,7 @@ footer {
       }
     }
     .projectHover {
-      height: fit-content;
+      height: 100%;
       width: 100%;
       p {
         font-size: 12px;

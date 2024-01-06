@@ -1,53 +1,31 @@
-import node from "../assets/icons/Skills/nodejs.svg";
-import vite from "../assets/icons/Skills/vitejs.svg";
-import sql from "../assets/icons/Skills/mysql.svg";
-import express from "../assets/icons/Skills/expressjs_dark.svg";
-import react from "../assets/icons/Skills/react.svg";
-import css from "../assets/icons/Skills/css.svg";
-import js from "../assets/icons/Skills/javascript.svg";
-import php from "../assets/icons/Skills/php_dark.svg";
-import html from "../assets/icons/Skills/html5.svg";
-import python from "../assets/icons/Skills/python.svg";
-import material from "../assets/icons/Skills/Material.svg";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useIcons } from "../context/Icons";
+import { ActivateAnomation } from "../Animations/ScrollAnimation";
 
-const Skills = () => {
+const Skills = (props) => {
+  const { iconsdark, iconslight } = useIcons();
+  const [skills, setSkills] = useState([]);
   useEffect(() => {
-    const scrollers = document.querySelectorAll(".scroller");
-
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      addAnimation();
+    if (props.theme === "dark") {
+      setSkills(Object.values(iconsdark));
+      ActivateAnomation();
+    } else {
+      setSkills(Object.values(iconslight));
+      // ActivateAnomation();
     }
-    function addAnimation() {
-      scrollers.forEach((scrollers) => {
-        scrollers.setAttribute("data-animated", true);
-        const scrollerInner = document.querySelector(".scroller__inner");
-        const scrollerInnerContent = Array.from(scrollerInner.children);
-        scrollerInnerContent.forEach((item) => {
-          const duplicateditem = item.cloneNode(true);
-          duplicateditem.setAttribute("aria-hidden", true);
-          scrollerInner.appendChild(duplicateditem);
-        });
-      });
-    }
-  }, []);
+  }, [props.theme]);
 
   return (
     <section id="Skills">
       <h1>Skills</h1>
       <div className="scroller">
         <div className="scroller__inner">
-          <img src={node} alt="" />
-          <img src={react} alt="" />
-          <img src={vite} alt="" />
-          <img src={express} alt="" />
-          <img src={js} alt="" />
-          <img src={sql} alt="" />
-          <img src={html} alt="" />
-          <img src={css} alt="" />
-          <img src={php} alt="" />
-          <img src={python} alt="" />
-          <img src={material} alt="" />
+          {skills.map((icon, index) => (
+            <img key={index} src={icon} alt={`Skill ${index}`} />
+          ))}
+          {skills.map((icon, index) => (
+            <img key={index} src={icon} alt={`Skill ${index}`} />
+          ))}
         </div>
       </div>
     </section>
