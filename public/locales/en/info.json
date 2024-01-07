@@ -1,3 +1,36 @@
 {
-    "charge": "Full Stack Developer"
+  "charge": "Full Stack Developer",
+  "OpenToWork": "Open to work",
+  "CloseToWork": "Not available",
+  "Resume": "Resume",
+
+  "aboutTitle": "About me",
+  "aboutInfo_1": "Hello 👋, I'm a systems engineering student passionate about",
+  "aboutInfo_1_span": " modern web development.",
+  "aboutInfo_2": " I specialize in React and Node.js, and I love exploring different technologies. I enjoy solving problems and I'm always",
+  "aboutInfo_2_span": " seeking new challenges",
+  "aboutInfo_3": " in the world of technology. I would love to be part of exciting projects and continue learning!",
+
+  "projectTitle": "Projects",
+  "projectInfo_1": "It's a platform for buying electronic devices. Users manage the stock by purchasing or deleting products. The administrator constantly updates the inventory to ensure an optimal shopping experience.",
+  "projectInfo_2": "The platform enables users to log in, browse, save favorite recipes, and rate them, providing a convenient way to discover, collect, and evaluate personalized recipes.",
+  "projectInfo_3": "The web application Connect and engage with your church community through our web platform. Create forums and posts, encouraging interaction and discussions among members, fostering a vibrant online congregation.",
+  "projectInfo_4": "A web platform offers interactive simulators for kinematics and Newton's laws. Users input study values to generate graphic animations and view detailed results in tables, providing an educational and intuitive experience.",
+  "projectInfo_5": " Browse top athletes and sports categorized by type on our platform. Discover the best in each category and suggest new sports to expand our coverage.",
+  "projectInfo_6": "Create your own binary tree interactively on our platform. Once constructed, explore various tree traversals, examine leaf nodes, and check if the tree is complete. Dive into the world of binary trees, visualize their structures, and explore their properties effortlessly.",
+
+  "skillsTitle": "Skills",
+
+  "contactTitle": "Contact",
+  "contactlabel1": "email",
+  "contactlabel2": "message",
+  "contactbtn": "Send email",
+
+  "emailerrormsg1": "Please enter your email",
+  "emailerrormsg2": "The email is too long",
+  "emailerrormsg3": "Please enter a valid email address",
+
+  "messageerrormsg1": "Please send me a message",
+
+  "footer": "Developed by"
 }

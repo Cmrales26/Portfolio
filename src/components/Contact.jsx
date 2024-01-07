@@ -1,6 +1,7 @@
 import { Box, Button, Stack, TextField } from "@mui/material";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const {
@@ -12,9 +13,11 @@ const Contact = () => {
   const onsubmit = handleSubmit((value) => {
     console.log(value);
   });
+
+  const { t } = useTranslation(["info"]);
   return (
     <section id="contact">
-      <h1>Contact</h1>
+      <h1>{t("contactTitle")}</h1>
 
       <Box
         component="form"
@@ -28,21 +31,21 @@ const Contact = () => {
         <div className="email">
           <TextField
             required
-            label="email"
+            label={t("contactlabel1")}
             type="email"
             variant="outlined"
             {...register("email", {
               required: {
                 value: true,
-                message: "Please enter your email",
+                message: t("emailerrormsg1"),
               },
               maxLength: {
                 value: 100,
-                message: "The emaile is too long",
+                message: t("emailerrormsg2"),
               },
               pattern: {
                 value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                message: "Please enter a valid email address",
+                message: t("emailerrormsg3"),
               },
             })}
           />
@@ -51,7 +54,7 @@ const Contact = () => {
         <div className="message">
           <TextField
             required
-            label="message"
+            label={t("contactlabel2")}
             type="text"
             multiline
             variant="outlined"
@@ -59,7 +62,7 @@ const Contact = () => {
             {...register("message", {
               required: {
                 value: true,
-                message: "Please send me a message",
+                message: t("messageerrormsg1"),
               },
             })}
           />
@@ -69,7 +72,7 @@ const Contact = () => {
         </div>
         <Stack>
           <Button variant="contained" type="submit">
-            Send Email
+            {t("contactbtn")}
           </Button>
         </Stack>
       </Box>

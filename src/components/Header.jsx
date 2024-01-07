@@ -46,19 +46,20 @@ const Header = (props) => {
             {openwork ? (
               <div className="avilable">
                 <img src={OpenWork} alt="Open work Icon" />
-                Open to work
+                {t("OpenToWork")}
               </div>
             ) : (
               <div className="close">
                 <img src={CloseWork} alt="Open work Icon" />
-                Close to work
+                <span></span>
+                {t("CloseToWork")}
               </div>
             )}
           </div>
           <div className="resume">
             <img src={resume} alt="" />
             <a href={resumedoc} download={true}>
-              Resume
+              {t("Resume")}
             </a>
           </div>
         </div>

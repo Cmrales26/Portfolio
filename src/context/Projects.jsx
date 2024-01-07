@@ -6,6 +6,7 @@ import sempiterno from "../assets/img/Sempiterno.jpg";
 import simulators from "../assets/img/Simulators.jpg";
 import Dnsports from "../assets/img/DNSports.png";
 import BinaryTree from "../assets/img/BinaryTree.jpg";
+import { useTranslation } from "react-i18next";
 
 export const ProjectContext = createContext();
 
@@ -16,6 +17,7 @@ export const useProjects = () => {
 };
 
 export const ProjectProvider = ({ children }) => {
+  const { t, i18n } = useTranslation(["info"]);
   const projects = [
     {
       id: 1,
@@ -23,10 +25,7 @@ export const ProjectProvider = ({ children }) => {
       img: Iconstore,
       link: "https://rubrica-c3-client.vercel.app/",
       status: "active",
-      info: `It's a platform for buying electronic devices. Users manage the
-            stock by purchasing or deleting products. The administrator
-            constantly updates the inventory to ensure an optimal shopping
-            experience.`,
+      info: t("projectInfo_1"),
       tech: [
         {
           node: "node",
@@ -45,9 +44,7 @@ export const ProjectProvider = ({ children }) => {
       link: "",
       img: Recipes,
       status: "Progress",
-      info: `The platform enables users to log in, browse, save favorite
-                recipes, and rate them, providing a convenient way to discover,
-                collect, and evaluate personalized recipes.`,
+      info: t("projectInfo_2"),
       tech: [
         {
           node: "node",
@@ -67,10 +64,7 @@ export const ProjectProvider = ({ children }) => {
       title: "Sempiterno",
       img: sempiterno,
       status: "active",
-      info: `The web application Connect and engage with your church
-                community through our web platform. Create forums and posts,
-                encouraging interaction and discussions among members, fostering
-                a vibrant online congregation.`,
+      info: t("projectInfo_3"),
       tech: [
         {
           php: "php",
@@ -88,10 +82,7 @@ export const ProjectProvider = ({ children }) => {
       link: "https://cmrales26.github.io/Modelos_Ingenieria/index.html",
       img: simulators,
       status: "active",
-      info: ` A web platform offers interactive simulators for kinematics and
-      Newton's laws. Users input study values to generate graphic
-      animations and view detailed results in tables, providing an
-      educational and intuitive experience.`,
+      info: t("projectInfo_4"),
       tech: [
         {
           python: "python",
@@ -108,9 +99,7 @@ export const ProjectProvider = ({ children }) => {
       link: "https://rubrica-c1-w2.vercel.app/",
       img: Dnsports,
       status: "active",
-      info: ` Browse top athletes and sports categorized by type on our
-                platform. Discover the best in each category and suggest new
-                sports to expand our coverage.`,
+      info: t("projectInfo_5"),
       tech: [
         {
           node: "node",
@@ -129,11 +118,7 @@ export const ProjectProvider = ({ children }) => {
       link: "https://binarytreephpvis.000webhostapp.com/",
       img: BinaryTree,
       status: "active",
-      info: ` Create your own binary tree interactively on our platform. Once
-      constructed, explore various tree traversals, examine leaf
-      nodes, and check if the tree is complete. Dive into the world of
-      binary trees, visualize their structures, and explore their
-      properties effortlessly.`,
+      info: t("projectInfo_6"),
       tech: [
         {
           php: "php",

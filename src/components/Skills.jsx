@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { useIcons } from "../context/Icons";
 import { ActivateAnomation } from "../Animations/ScrollAnimation";
+import { useTranslation } from "react-i18next";
 
 const Skills = (props) => {
   const { iconsdark, iconslight } = useIcons();
   const [skills, setSkills] = useState([]);
+  const { t } = useTranslation(["info"]);
   useEffect(() => {
     if (props.theme === "dark") {
       setSkills(Object.values(iconsdark));
@@ -17,7 +19,7 @@ const Skills = (props) => {
 
   return (
     <section id="Skills">
-      <h1>Skills</h1>
+      <h1>{t("skillsTitle")}</h1>
       <div className="scroller">
         <div className="scroller__inner">
           {skills.map((icon, index) => (

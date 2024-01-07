@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import LinkIcon from "../assets/icons/alternate-external-link.svg";
 import { useIcons } from "../context/Icons";
 import { useProjects } from "../context/Projects";
@@ -5,16 +6,13 @@ import { useEffect, useState } from "react";
 const Projects = () => {
   const { projects } = useProjects();
   const { iconsdark } = useIcons();
-  const [dataProject, setdataProject] = useState([]);
 
-  useEffect(() => {
-    setdataProject(projects);
-  }, []);
+  const { t } = useTranslation(["info"]);
   return (
     <section id="Projects">
-      <h1>Projects</h1>
+      <h1>{t("projectTitle")}</h1>
       <div className="projects">
-        {dataProject.map((project) => (
+        {projects.map((project) => (
           <div className="project" key={project.id}>
             <img src={project.img} className="projectimga" alt="" />
             <div className="projectHover">
