@@ -9,7 +9,7 @@ import chveron_dark from "../assets/icons/chevron-down.svg";
 import chveron_light from "../assets/icons/chevron-down-light.svg";
 
 const Lenguage = (props) => {
-  const { t, i18n } = useTranslation(["info"]);
+  const { i18n } = useTranslation(["info"]);
   const textColor = props.theme === "light" ? "black" : "white";
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -79,12 +79,12 @@ const Lenguage = (props) => {
         {leng === "es" ? (
           <MenuItem onClick={changeLenguagetoEn} className={"menuitem"}>
             <img className="flag-menu" src={en} alt="Us-Flag" />
-            <p style={{ color: textColor }}>English</p>
+            <p style={{ color: textColor, marginLeft: ".5rem" }}>English</p>
           </MenuItem>
         ) : (
           <MenuItem onClick={changeLenguagetoEs} className={"menuitem"}>
             <img className="flag-menu" src={es} alt="Col-Flag" />
-            <p style={{ color: textColor }}>Spanish</p>
+            <p style={{ color: textColor, marginLeft: ".5rem" }}>Spanish</p>
           </MenuItem>
         )}
       </Menu>

@@ -1,4 +1,9 @@
 {
+  "menuitem1": "Sobre de mí",
+  "menuitem2": "Proyectos",
+  "menuitem3": "Habilidades",
+  "menuitem4": "Contacto",
+
   "charge": "Desarrollador Full Stack",
   "OpenToWork": "Abierto a trabajar",
   "CloseToWork": "No disponible",

@@ -1,4 +1,9 @@
 {
+  "menuitem1": "About Me",
+  "menuitem2": "Projects",
+  "menuitem3": "Skills",
+  "menuitem4": "Contact",
+
   "charge": "Full Stack Developer",
   "OpenToWork": "Open to work",
   "CloseToWork": "Not available",
