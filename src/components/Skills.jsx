@@ -11,7 +11,7 @@ const Skills = (props) => {
       ActivateAnomation();
     } else {
       setSkills(Object.values(iconslight));
-      // ActivateAnomation();
+      ActivateAnomation();
     }
   }, [props.theme]);
 
