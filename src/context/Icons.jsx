@@ -11,6 +11,8 @@ import php from "../assets/icons/Skills/php_dark.svg";
 import html from "../assets/icons/Skills/html5.svg";
 import python from "../assets/icons/Skills/python.svg";
 import material from "../assets/icons/Skills/Material.svg";
+import figma from "../assets/icons/Skills/figma.svg"
+import git from "../assets/icons/Skills/git.svg"
 
 import sqllight from "../assets/icons/Skills/mysql_Light.svg";
 import phplight from "../assets/icons/Skills/php_light.svg";
@@ -31,8 +33,10 @@ export const IconProvider = ({ children }) => {
     sql: sql,
     express: express,
     react: react,
+    git: git,
     css: css,
     js: js,
+    figma: figma,
     php: php,
     html: html,
     python: python,
@@ -45,8 +49,10 @@ export const IconProvider = ({ children }) => {
     sql: sqllight,
     express: expresslight,
     react: react,
+    git: git,
     css: css,
     js: js,
+    figma: figma,
     php: phplight,
     html: html,
     python: python,

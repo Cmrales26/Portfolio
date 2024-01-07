@@ -102,15 +102,26 @@ header {
   .mystatus {
     margin-top: 1rem;
     display: flex;
+    align-items: center;
     gap: 1rem;
     .avilable {
+      display: flex;
       align-items: center;
       border-radius: 10px;
       padding: 0.5rem 1rem;
       height: fit-content;
       gap: 0.5rem;
       background-color: var(--primaryButton);
+      color: var(--darkTextColor) !important;
+    }
+    .close {
       display: flex;
+      align-items: center;
+      border-radius: 10px;
+      padding: 0.5rem 1rem;
+      height: fit-content;
+      gap: 0.5rem;
+      background-color: var(--errorcolor);
       color: var(--darkTextColor) !important;
     }
     .resume {
@@ -188,7 +199,7 @@ header {
     .titleandlink {
       margin-bottom: 2px;
       display: flex;
-      justify-content: space-between; 
+      justify-content: space-between;
       img {
         width: 20px;
       }
@@ -210,7 +221,6 @@ header {
       gap: 20px;
       .techicon {
         width: 25px;
-        /* border: 1px solid red; */
       }
       .pythonicon {
         width: 60px;
@@ -273,7 +283,7 @@ header {
   .scroller[data-animated="true"] .scroller__inner {
     width: max-content;
     flex-wrap: nowrap;
-    animation: scroll 5s linear infinite;
+    animation: scroll 15s linear infinite;
   }
 }
 
@@ -291,7 +301,8 @@ header {
   .email {
     width: 100% !important;
   }
-  .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  .css-1d3z3hw-MuiOutlinedInput-notchedOutline,
+  .css-igs3ac {
     border: none !important;
   }
   .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
@@ -312,14 +323,22 @@ header {
   label {
     color: var(--darkTextColor);
   }
+  .css-i44wyl {
+    width: 100%;
+  }
   input,
   textarea {
-    width: 100%;
     background-color: var(--darkInputColor);
     border-radius: 10px;
     color: var(--darkTextColor);
     text-indent: 1rem;
     padding-top: 1rem;
+    fieldset {
+      border: none;
+    }
+  }
+  .css-1hof3tc {
+    padding: 0;
   }
   .message {
     width: 100% !important;
