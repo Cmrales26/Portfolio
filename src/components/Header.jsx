@@ -8,9 +8,12 @@ import Githubdark from "../assets/icons/github-dark.svg";
 import Githublight from "../assets/icons/github-light.svg";
 import resumedoc from "../assets/documents/CV_NelsonMorales_1002035487.pdf";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Header = (props) => {
   const [openwork, setOpenWork] = useState(true);
+
+  const { t, i18n } = useTranslation(["info"]);
   return (
     <header>
       <figure>
@@ -20,7 +23,7 @@ const Header = (props) => {
         <div className="info&social">
           <h1>Nelson Morales</h1>
           <div className="social">
-            <p>Full Stack Developer</p>
+            <p>{t("charge")}</p>
             <a href="https://www.linkedin.com/in/cmrales26/" target="_blank">
               {props.theme === "dark" ? (
                 <img src={Liknedindark} alt="Open work Icon" />

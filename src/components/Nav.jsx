@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import light from "../assets/theme/sun.svg";
 import dark from "../assets/theme/moon-stars.svg";
+import Lenguage from "./Lenguage";
 
 const Nav = (props) => {
   useEffect(() => {
@@ -18,10 +19,13 @@ const Nav = (props) => {
     props.setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
   };
+
   return (
     <nav>
       <ul>
-        <li className="">Idioma</li>
+        <li className="">
+          <Lenguage theme={props.theme} />
+        </li>
         <li className="ThemeSelector">
           {props.theme === "dark" ? (
             <img

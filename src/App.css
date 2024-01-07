@@ -71,6 +71,32 @@ nav {
     }
   }
 }
+.MenuLenguage {
+  .flag {
+    width: 40px;
+  }
+  .menu {
+    display: flex;
+    gap: 1rem;
+  }
+  .flag-menu {
+    width: 20px;
+  }
+  .flagen {
+    width: 40px;
+    height: 30px;
+  }
+  .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  ul {
+    display: flex;
+    li {
+      gap: 10px;
+    }
+  }
+}
 
 header {
   margin-top: 2rem;
