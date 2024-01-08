@@ -329,9 +329,9 @@ header {
   }
 
   .scroller[data-animated="true"] .scroller__inner {
-    width: auto;
+    width: fit-content;
     flex-wrap: nowrap;
-    animation: scroll 5s linear infinite;
+    animation: scroll 13s linear infinite;
   }
 }
 
