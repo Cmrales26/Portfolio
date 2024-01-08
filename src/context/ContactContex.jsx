@@ -16,7 +16,6 @@ export const ContactProvider = ({ children }) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: data,
-      g,
     });
     return suit;
   };
