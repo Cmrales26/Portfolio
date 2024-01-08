@@ -329,7 +329,8 @@ header {
   }
 
   .scroller[data-animated="true"] .scroller__inner {
-    width: 5700px;
+    /* width: max-content; */
+    width: 5400px;
     flex-wrap: nowrap;
     animation: scroll 15s linear infinite;
   }
