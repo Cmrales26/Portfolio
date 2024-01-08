@@ -1,19 +1,40 @@
 import { Box, Button, Stack, TextField } from "@mui/material";
-import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { useContact } from "../context/ContactContex";
+import toast, { Toaster } from "react-hot-toast";
 
-const Contact = () => {
+const Contact = (props) => {
+  const { SendEmail } = useContact();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onsubmit = handleSubmit((value) => {
-    console.log(value);
-  });
+  const backgroundColor = props.theme === "light" ? "#272733" : "#fafafa";
+  const textColor = props.theme === "light" ? "#fafafa" : "#272733";
 
+  const onsubmit = handleSubmit((value) => {
+    const MyPromise = new Promise(async (resolve, reject) => {
+      try {
+        const res = await SendEmail(JSON.stringify(value));
+        if (res.status === 200) {
+          resolve(t("toastSucces"));
+        } else {
+          reject(new Error(t("toastError")));
+        }
+      } catch (error) {
+        reject(error);
+      }
+    });
+
+    toast.promise(MyPromise, {
+      loading: t("toastLoading"),
+      success: t("toastSucces"),
+      error: t("toastError"),
+    });
+  });
   const { t } = useTranslation(["info"]);
   return (
     <section id="contact">
@@ -76,6 +97,15 @@ const Contact = () => {
           </Button>
         </Stack>
       </Box>
+      <Toaster
+        position="bottom-center"
+        toastOptions={{
+          style: {
+            background: backgroundColor,
+            color: textColor,
+          },
+        }}
+      />
     </section>
   );
 };

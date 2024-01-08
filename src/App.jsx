@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import { ProjectProvider } from "./context/Projects";
 import { IconProvider } from "./context/Icons";
 import { useEffect, useState } from "react";
+import { ContactProvider } from "./context/ContactContex";
 function App() {
   const [theme, setTheme] = useState(false);
   useEffect(() => {
@@ -28,7 +29,9 @@ function App() {
           </ProjectProvider>
           <Skills theme={theme} />
         </IconProvider>
-        <Contact />
+        <ContactProvider>
+          <Contact theme={theme} />
+        </ContactProvider>
         <Footer />
       </section>
     </section>

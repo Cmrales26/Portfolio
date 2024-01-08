@@ -31,6 +31,10 @@
   "contactlabel2": "mensaje",
   "contactbtn": "Enviar correo electrónico",
 
+  "toastLoading": "Enviando correo...",
+  "toastSucces": "Correo enviado con éxito",
+  "toastError": "Error al enviar el correo",
+
   "emailerrormsg1": "Por favor, introduce tu correo electrónico",
   "emailerrormsg2": "El correo electrónico es demasiado largo",
   "emailerrormsg3": "Por favor, introduce una dirección de correo electrónico válida",

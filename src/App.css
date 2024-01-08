@@ -379,11 +379,13 @@ header {
     background-color: var(--darkInputColor);
     border-radius: 10px;
     color: var(--darkTextColor);
-    text-indent: 1rem;
     padding-top: 1rem;
     fieldset {
       border: none;
     }
+  }
+  textarea {
+    padding: 1rem;
   }
   .css-1hof3tc {
     padding: 0;

@@ -31,6 +31,10 @@
   "contactlabel2": "message",
   "contactbtn": "Send email",
 
+  "toastLoading": "Sending email...",
+  "toastSucces": "Email sent successfully",
+  "toastError": "Failed to send email",
+
   "emailerrormsg1": "Please enter your email",
   "emailerrormsg2": "The email is too long",
   "emailerrormsg3": "Please enter a valid email address",
