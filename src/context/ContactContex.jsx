@@ -8,15 +8,15 @@ export const useContact = () => {
   return context;
 };
 const SERVER_URL =
-  import.meta.env.VITE_SERVER_URL || "http://localhost:6000/api";
+  import.meta.env.VITE_SERVER_URL || "http://localhost:5500/api";
 
 export const ContactProvider = ({ children }) => {
-  console.log(SERVER_URL);
   const SendEmail = async (data) => {
     const suit = await fetch(`${SERVER_URL}/sendemail`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: data,
+      g,
     });
     return suit;
   };
