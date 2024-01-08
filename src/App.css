@@ -338,6 +338,8 @@ header {
 @keyframes scroll {
   to {
     transform: translate(calc(-50% - 3.5rem));
+    -webkit-transform: translate(calc(-50% - 3.5rem));
+    -moz-transform: translate(calc(-50% - 3.5rem));
   }
 }
 
