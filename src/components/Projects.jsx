@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import LinkIcon from "../assets/icons/alternate-external-link.svg";
 import { useIcons } from "../context/Icons";
 import { useProjects } from "../context/Projects";
-import { useEffect, useState } from "react";
 const Projects = () => {
   const { projects } = useProjects();
   const { iconsdark } = useIcons();
@@ -18,7 +17,7 @@ const Projects = () => {
             <div className="projectHover">
               <div className="titleandlink">
                 <h3>{project.title}</h3>
-                <a href={project.link} target="_blank">
+                <a href={project.link} target="_blank" rel="noreferrer">
                   {project.status === "active" ? (
                     <img src={LinkIcon} alt="Link" />
                   ) : null}

@@ -1,4 +1,5 @@
 import { createContext, useContext } from "react";
+import PropTypes from "prop-types";
 
 import node from "../assets/icons/Skills/nodejs.svg";
 import vite from "../assets/icons/Skills/vitejs.svg";
@@ -11,8 +12,9 @@ import php from "../assets/icons/Skills/php_dark.svg";
 import html from "../assets/icons/Skills/html5.svg";
 import python from "../assets/icons/Skills/python.svg";
 import material from "../assets/icons/Skills/Material.svg";
-import figma from "../assets/icons/Skills/figma.svg"
-import git from "../assets/icons/Skills/git.svg"
+import figma from "../assets/icons/Skills/figma.svg";
+import git from "../assets/icons/Skills/git.svg";
+import flutter from "../assets/icons/Skills/flutter.svg";
 
 import sqllight from "../assets/icons/Skills/mysql_Light.svg";
 import phplight from "../assets/icons/Skills/php_light.svg";
@@ -33,6 +35,7 @@ export const IconProvider = ({ children }) => {
     sql: sql,
     express: express,
     react: react,
+    flutter: flutter,
     git: git,
     css: css,
     js: js,
@@ -49,6 +52,7 @@ export const IconProvider = ({ children }) => {
     sql: sqllight,
     express: expresslight,
     react: react,
+    flutter: flutter,
     git: git,
     css: css,
     js: js,
@@ -63,4 +67,8 @@ export const IconProvider = ({ children }) => {
       {children}
     </IconsContext.Provider>
   );
+};
+
+IconProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };

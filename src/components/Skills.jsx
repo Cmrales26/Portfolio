@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { useIcons } from "../context/Icons";
 import { ActivateAnomation } from "../Animations/ScrollAnimation";
@@ -32,6 +33,10 @@ const Skills = (props) => {
       </div>
     </section>
   );
+};
+
+Skills.propTypes = {
+  theme: PropTypes.string.isRequired,
 };
 
 export default Skills;
