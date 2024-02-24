@@ -488,7 +488,7 @@ footer {
     }
   }
   .scroller[data-animated="true"] .scroller__inner {
-    width: 2100px !important;
+    width: 2270px !important;
   }
   @keyframes scroll {
     to {
