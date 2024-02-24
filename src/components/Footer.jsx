@@ -6,8 +6,8 @@ const Footer = () => {
     <footer>
       <hr />
       <p>
-        &copy; {t("footer")} {" "}
-        <a href="https://twitter.com/Cmrales26" target="_blank">
+        &copy; {t("footer")}{" "}
+        <a href="https://github.com/Cmrales26" target="_blank">
           @Crmales26
         </a>
       </p>
