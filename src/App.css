@@ -32,7 +32,7 @@ html {
   justify-content: center;
   align-items: center;
   font-family: "Onest", sans-serif;
-  transition: ease-in-out 0.5s;
+  transition: ease 0.2s;
 }
 #app[theme="light"] {
   background-color: var(--lightBackground);
@@ -71,6 +71,7 @@ nav {
     list-style: none;
     align-items: center;
     justify-content: space-between;
+
     .menuitemtrigger {
       display: none;
       img {
@@ -84,12 +85,30 @@ nav {
         text-decoration: none;
         color: var(--textaccent);
       }
+      li {
+        position: relative;
+        display: inline-block;
+      }
+      li::before {
+        transition: ease-in-out 0.5s;
+        height: 3px;
+        content: "";
+        position: absolute;
+        border-radius: 10px;
+        background-color: #ffa500;
+        width: 0%;
+        bottom: -3px;
+      }
+      li:hover::before {
+        width: 100%;
+      }
     }
     .ManuandHam {
       display: flex;
       flex-wrap: wrap;
     }
     .ThemeSelector {
+      cursor: pointer;
       img {
         width: 40px;
         height: 40px;
@@ -181,10 +200,14 @@ header {
       align-items: center;
       gap: 0.5rem;
       color: var(--darkTextColor);
+      transition: ease-out 0.3s;
       a {
         text-decoration: none;
         color: var(--darkTextColor);
       }
+    }
+    .resume:hover {
+      transform: scale(1.05);
     }
   }
 }

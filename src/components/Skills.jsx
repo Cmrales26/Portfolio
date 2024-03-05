@@ -8,6 +8,7 @@ const Skills = (props) => {
   const { iconsdark, iconslight } = useIcons();
   const [skills, setSkills] = useState([]);
   const { t } = useTranslation(["info"]);
+
   useEffect(() => {
     if (props.theme === "dark") {
       setSkills(Object.values(iconsdark));

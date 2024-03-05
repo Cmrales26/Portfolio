@@ -11,7 +11,8 @@ import { IconProvider } from "./context/Icons";
 import { useEffect, useState } from "react";
 import { ContactProvider } from "./context/ContactContex";
 function App() {
-  const [theme, setTheme] = useState(false);
+  const [theme, setTheme] = useState("");
+
   useEffect(() => {
     const app = document.querySelector("#app");
     app.setAttribute("theme", theme);

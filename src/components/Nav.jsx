@@ -16,8 +16,13 @@ const Nav = (props) => {
     if (storedTheme) {
       props.setTheme(storedTheme);
     } else {
-      props.setTheme("dark");
-      localStorage.setItem("theme", "dark");
+      const prefersDarkMode = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+
+      const defaultTheme = prefersDarkMode ? "dark" : "light";
+      props.setTheme(defaultTheme);
+      localStorage.setItem("theme", defaultTheme);
     }
   }, []);
 
@@ -49,16 +54,16 @@ const Nav = (props) => {
         </li>
         <li>
           <ul className="Navigation">
-            <li>
+            <li className="navItem">
               <a href="#Aboutme">{t("menuitem1")}</a>
             </li>
-            <li>
+            <li className="navItem">
               <a href="#Projects">{t("menuitem2")}</a>
             </li>
-            <li>
+            <li className="navItem">
               <a href="#Skills">{t("menuitem3")}</a>
             </li>
-            <li>
+            <li className="navItem">
               <a href="#contact">{t("menuitem4")}</a>
             </li>
           </ul>
@@ -89,20 +94,22 @@ const Nav = (props) => {
         </li>
       </ul>
 
+      {/* Hamburger Toggle */}
+
       <ul
         className={`Navigation-ham ${isOpen ? "is-open" : ""}`}
         onClick={toggleMenu}
       >
-        <li>
+        <li className="navItem">
           <a href="#Aboutme">{t("menuitem1")}</a>
         </li>
-        <li>
+        <li className="navItem">
           <a href="#Projects">{t("menuitem2")}</a>
         </li>
-        <li>
+        <li className="navItem">
           <a href="#Skills">{t("menuitem3")}</a>
         </li>
-        <li>
+        <li className="navItem">
           <a href="#contact">{t("menuitem4")}</a>
         </li>
       </ul>

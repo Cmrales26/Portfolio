@@ -11,9 +11,10 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const Header = (props) => {
+  // False to chage the status
   const [openwork, setOpenWork] = useState(true);
 
-  const { t, i18n } = useTranslation(["info"]);
+  const { t } = useTranslation(["info"]);
   return (
     <header>
       <figure>
@@ -26,16 +27,16 @@ const Header = (props) => {
             <p>{t("charge")}</p>
             <a href="https://www.linkedin.com/in/cmrales26/" target="_blank">
               {props.theme === "dark" ? (
-                <img src={Liknedindark} alt="Open work Icon" />
+                <img src={Liknedindark} alt="Likedin Icon" />
               ) : (
-                <img src={Liknedinlight} alt="Open work Icon" />
+                <img src={Liknedinlight} alt="Linkedin Icon Light" />
               )}
             </a>
             <a href="https://github.com/Cmrales26" target="_blank">
               {props.theme === "dark" ? (
-                <img src={Githubdark} alt="Open work Icon" />
+                <img src={Githubdark} alt="Github Icon " />
               ) : (
-                <img src={Githublight} alt="Open work Icon" />
+                <img src={Githublight} alt="Github Icon dark" />
               )}
             </a>
           </div>
