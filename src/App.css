@@ -414,6 +414,7 @@ header {
   margin-top: 2rem;
 
   .error {
+    margin-top: .5rem;
     color: var(--errorcolor);
   }
 
