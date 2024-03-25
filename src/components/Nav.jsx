@@ -37,7 +37,7 @@ const Nav = (props) => {
   };
 
   return (
-    <nav>
+    <nav id="Nav">
       <ul>
         <li className="menuitemtrigger" onClick={toggleMenu}>
           {props.theme === "dark" ? (

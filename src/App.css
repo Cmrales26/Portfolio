@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;700&display=swap");
+
 :root {
   /* DARK */
   --darkBackground: #272733;
@@ -22,6 +23,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -34,26 +36,33 @@ html {
   font-family: "Onest", sans-serif;
   transition: ease 0.2s;
 }
+
 #app[theme="light"] {
   background-color: var(--lightBackground);
+
   h1 {
     color: #1e1e1e;
   }
+
   p {
     color: var(--lightTextColor);
   }
+
   label {
     color: var(--lightTextColor);
   }
+
   input {
     color: var(--lightTextColor);
     background-color: var(--lightInputColor);
   }
+
   textarea {
     color: var(--lightTextColor);
     background-color: var(--lightInputColor);
   }
 }
+
 #Portfolio {
   width: 800px;
 }
@@ -63,6 +72,7 @@ nav {
     display: none;
     transition: 1s ease-in-out;
   }
+
   ul {
     display: flex;
     gap: 1rem;
@@ -74,21 +84,26 @@ nav {
 
     .menuitemtrigger {
       display: none;
+
       img {
         width: 40px;
       }
     }
+
     .Navigation {
       display: flex;
       gap: 2rem;
+
       a {
         text-decoration: none;
         color: var(--textaccent);
       }
+
       li {
         position: relative;
         display: inline-block;
       }
+
       li::before {
         transition: ease-in-out 0.5s;
         height: 3px;
@@ -99,16 +114,20 @@ nav {
         width: 0%;
         bottom: -3px;
       }
+
       li:hover::before {
         width: 100%;
       }
     }
+
     .ManuandHam {
       display: flex;
       flex-wrap: wrap;
     }
+
     .ThemeSelector {
       cursor: pointer;
+
       img {
         width: 40px;
         height: 40px;
@@ -121,17 +140,21 @@ nav {
   .flag {
     width: 40px;
   }
+
   .menu {
     display: flex;
     gap: 1rem;
   }
+
   .flag-menu {
     width: 20px;
   }
+
   .flagen {
     width: 40px;
     height: 30px;
   }
+
   .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper,
   .css-pwxzbm {
     background-color: transparent;
@@ -143,34 +166,42 @@ header {
   margin-top: 2rem;
   display: flex;
   align-items: center;
+
   figure {
     /* border: 1px solid red; */
     height: fit-content;
     border-radius: 50%;
+
     img {
       border-radius: 50%;
       width: 200px;
     }
   }
+
   .content {
     margin-left: 3rem;
+
     h1 {
       font-size: 50px;
       color: var(--darkTextColor);
     }
+
     .social {
       p {
         color: var(--textaccent) !important;
       }
+
       display: flex;
       gap: 1rem;
     }
   }
+
   .mystatus {
     margin-top: 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
+
     .avilable {
       display: flex;
       align-items: center;
@@ -181,6 +212,7 @@ header {
       background-color: var(--primaryButton);
       color: var(--darkTextColor) !important;
     }
+
     .close {
       display: flex;
       align-items: center;
@@ -191,6 +223,7 @@ header {
       background-color: var(--errorcolor);
       color: var(--darkTextColor) !important;
     }
+
     .resume {
       border-radius: 10px;
       padding: 0.5rem 1rem;
@@ -201,11 +234,13 @@ header {
       gap: 0.5rem;
       color: var(--darkTextColor);
       transition: ease-out 0.3s;
+
       a {
         text-decoration: none;
         color: var(--darkTextColor);
       }
     }
+
     .resume:hover {
       transform: scale(1.05);
     }
@@ -214,15 +249,18 @@ header {
 
 #Aboutme {
   margin-top: 4rem;
+
   h1 {
     font-size: 30px;
     color: var(--textaccent) !important;
     margin-bottom: 1rem;
   }
+
   p {
     color: var(--darkTextColor);
     line-height: 1.6;
   }
+
   .accenttext {
     color: var(--textaccent);
   }
@@ -230,14 +268,17 @@ header {
 
 #Projects {
   margin-top: 2rem;
+
   h1 {
     font-size: 30px;
     color: var(--textaccent) !important;
     margin-bottom: 1rem;
   }
+
   .project {
     position: relative;
   }
+
   .projects {
     display: flex;
     flex-wrap: wrap;
@@ -245,6 +286,7 @@ header {
     align-items: center;
     padding: 20px;
     gap: 10px;
+
     .projectimga {
       width: 370px;
       border-radius: 10px;
@@ -255,6 +297,7 @@ header {
       transition: 0.5s ease;
     }
   }
+
   .projectHover {
     transition: 0.5s ease;
     opacity: 0;
@@ -267,34 +310,42 @@ header {
     height: 240px;
     border-radius: 10px;
     padding: 1rem;
+
     .titleandlink {
       margin-bottom: 2px;
       display: flex;
       justify-content: space-between;
+
       img {
         width: 20px;
       }
+
       h3 {
         color: var(--textaccent);
       }
     }
+
     .pageinfo {
       p {
         color: var(--lightBackground) !important;
       }
+
       font-size: 14px;
     }
+
     .techs {
       display: flex;
       justify-content: center;
       align-items: center;
       margin-top: 1rem;
       gap: 20px;
+
       .techicon {
         width: 25px;
       }
     }
   }
+
   .project:hover .projectimga {
     opacity: 0.2;
   }
@@ -311,6 +362,7 @@ header {
     margin-bottom: 2rem;
     margin-top: 2rem;
   }
+
   .scroller {
     max-width: 100%;
 
@@ -331,20 +383,16 @@ header {
 
   .scroller[data-animated="true"] {
     overflow: hidden;
-    -webkit-mask: linear-gradient(
-      90deg,
-      transparent,
-      white 20%,
-      white 80%,
-      transparent
-    );
-    mask: linear-gradient(
-      90deg,
-      transparent,
-      white 20%,
-      white 80%,
-      transparent
-    );
+    -webkit-mask: linear-gradient(90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent);
+    mask: linear-gradient(90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent);
   }
 
   .scroller[data-animated="true"] .scroller__inner {
@@ -364,16 +412,20 @@ header {
 
 #contact {
   margin-top: 2rem;
+
   .error {
     color: var(--errorcolor);
   }
+
   .email {
     width: 100% !important;
   }
+
   .css-1d3z3hw-MuiOutlinedInput-notchedOutline,
   .css-igs3ac {
     border: none !important;
   }
+
   .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
     width: 100%;
   }
@@ -382,6 +434,7 @@ header {
     font-size: 30px;
     color: var(--textaccent) !important;
   }
+
   .css-xn6ruc {
     display: flex;
     flex-direction: column;
@@ -389,34 +442,43 @@ header {
     justify-content: center;
     margin: 1rem;
   }
+
   label {
     color: var(--darkTextColor);
   }
+
   .css-i44wyl {
     width: 100%;
   }
+
   input,
   textarea {
     background-color: var(--darkInputColor);
     border-radius: 10px;
     color: var(--darkTextColor);
     padding-top: 1rem;
+
     fieldset {
       border: none;
     }
   }
+
   textarea {
     padding: 1rem;
   }
+
   .css-1hof3tc {
     padding: 0;
   }
+
   .message {
     width: 100% !important;
+
     .css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root {
       padding: 0;
     }
   }
+
   button {
     background-color: var(--primaryButton);
   }
@@ -425,9 +487,9 @@ header {
 footer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin: 2rem 0;
+
   hr {
     border: none !important;
     height: 1px;
@@ -435,13 +497,44 @@ footer {
     width: 90%;
     margin-bottom: 1rem;
   }
-  p {
-    color: var(--darkTextColor);
+
+  article {
+    width: 90%;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      color: var(--darkTextColor);
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--textaccent);
+    }
+
+    figure {
+      display: flex;
+      cursor: pointer;
+      outline: #ffa500 solid 1px;
+      border-radius: 5px;
+      padding: .3rem .3rem .1rem .3rem;
+      transition: ease-in-out .2s;
+
+      .arrowUp {
+        height: 15px;
+        width: 15px;
+      }
+    }
+
+    figure:hover {
+      transform: scale(1.2);
+    }
+
   }
-  a {
-    text-decoration: none;
-    color: var(--textaccent);
-  }
+
+
 }
 
 /* RESPONSIVE */
@@ -450,9 +543,11 @@ footer {
   #Portfolio {
     width: 100%;
   }
+
   #app {
     padding: 2rem;
   }
+
   #Projects {
     .projects {
       justify-content: center;
@@ -463,20 +558,25 @@ footer {
 @media screen and (max-width: 615px) {
   nav {
     margin-top: 0rem;
+
     ul {
       margin: 0rem;
+
       .menuitemtrigger {
         display: flex;
       }
+
       .Navigation {
         display: none;
       }
     }
   }
+
   .Navigation-ham.is-open {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+
     a {
       text-decoration: none;
       color: var(--textaccent);
@@ -486,15 +586,19 @@ footer {
   .content {
     margin-left: 0px !important;
   }
+
   header {
     width: 100%;
     flex-direction: column;
+
     h1 {
       font-size: 20px;
     }
+
     .social {
       justify-content: center;
     }
+
     .mystatus {
       justify-content: center;
     }
@@ -504,51 +608,64 @@ footer {
     .scroller {
       .scroller__inner {
         gap: 2rem;
+
         img {
           width: 50px;
         }
       }
     }
   }
+
   .scroller[data-animated="true"] .scroller__inner {
     width: 2270px !important;
   }
+
   @keyframes scroll {
     to {
       transform: translate(calc(-50% - 1rem));
     }
   }
+
   footer {
     margin: 0rem 0;
   }
 }
+
 @media screen and (max-width: 425px) {
   #Portfolio {
     width: 100%;
   }
+
   .mystatus {
     font-size: 12px;
   }
+
   .content {
     h1 {
       font-size: 40px !important;
     }
   }
+
   #Projects {
     .projects {
       justify-content: center;
+
       .projectimga {
         width: 100%;
       }
     }
+
     .projectHover {
       height: 100%;
       width: 100%;
+
       p {
         font-size: 12px;
       }
+
       .techs {
         flex-wrap: wrap;
+
         .techicon {
           width: 20px;
         }
