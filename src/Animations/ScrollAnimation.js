@@ -3,6 +3,8 @@ export const ActivateAnomation = () => {
 
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     addAnimation();
+  } else {
+    return false;
   }
   function addAnimation() {
     scrollers.forEach((scrollers) => {

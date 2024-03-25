@@ -23,14 +23,21 @@ const Skills = (props) => {
     <section id="Skills">
       <h1>{t("skillsTitle")}</h1>
       <div className="scroller">
-        <div className="scroller__inner">
-          {skills.map((icon, index) => (
-            <img key={index} src={icon} alt={`Skill ${index}`} />
-          ))}
-          {skills.map((icon, index) => (
-            <img key={index} src={icon} alt={`Skill ${index}`} />
-          ))}
-        </div>
+        {ActivateAnomation() ? (
+          <div className="scroller__inner">
+            {skills.map((icon, index) => (
+              <img key={index} src={icon} alt={`Skill ${index}`} />
+            ))}
+            {skills.map((icon, index) => (
+              <img key={index} src={icon} alt={`Skill ${index}`} />
+            ))}          </div>
+        ) : (
+          <div className="scroller__inner">
+            {skills.map((icon, index) => (
+              <img key={index} src={icon} alt={`Skill ${index}`} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
