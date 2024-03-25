@@ -628,16 +628,6 @@ footer {
 
   footer {
     margin: 0rem 0;
-
-    figure {
-
-      padding: .1rem .3rem .1rem .3rem !important;
-
-      .arrowUp {
-        height: 10px !important;
-        width: 10px !important;
-      }
-    }
   }
 
 }
