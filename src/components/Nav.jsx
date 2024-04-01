@@ -63,7 +63,6 @@ const Nav = ({ theme, setTheme, colorScheme, setColorScheme }) => {
       setTheme(defaultTheme);
       localStorage.setItem("theme", defaultTheme);
     } else {
-      console.log(newTheme);
       setTheme(newTheme);
       localStorage.setItem("theme", newTheme);
     }
