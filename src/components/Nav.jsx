@@ -18,29 +18,23 @@ const Nav = ({ theme, setTheme, colorScheme, setColorScheme }) => {
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
     const storedScheme = localStorage.getItem("colorScheme") || "system";
+    const prefersDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    const defaultTheme = prefersDarkMode ? "dark" : "light";
 
     if (storedTheme && storedScheme === "system") {
-      setTheme(storedTheme);
-      localStorage.setItem("theme", storedTheme);
-      setColorScheme(storedScheme);
-      localStorage.setItem("colorScheme", storedScheme);
-    } else if (storedTheme && storedScheme !== "system") {
-      console.log("Entre aqui");
-      setTheme(storedTheme);
-      localStorage.setItem("theme", storedTheme);
-      setColorScheme(storedTheme);
-      localStorage.setItem("colorScheme", storedTheme);
-    } else {
-      localStorage.setItem("colorScheme", "System");
-      const prefersDarkMode = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-
-      localStorage.setItem("colorScheme", "system");
-      const defaultTheme = prefersDarkMode ? "dark" : "light";
       setTheme(defaultTheme);
       localStorage.setItem("theme", defaultTheme);
+      setColorScheme(storedScheme);
+    } else {
+      const newTheme = storedTheme || defaultTheme;
+      setTheme(newTheme);
+      setColorScheme(newTheme);
+      localStorage.setItem("theme", newTheme);
     }
+
+    localStorage.setItem("colorScheme", storedScheme);
   }, [setTheme, setColorScheme]);
 
   const toggletheme = () => {
