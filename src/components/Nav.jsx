@@ -25,6 +25,7 @@ const Nav = ({ theme, setTheme, colorScheme, setColorScheme }) => {
       setColorScheme(storedScheme);
       localStorage.setItem("colorScheme", storedScheme);
     } else if (storedTheme && storedScheme !== "system") {
+      console.log("Entre aqui");
       setTheme(storedTheme);
       localStorage.setItem("theme", storedTheme);
       setColorScheme(storedScheme);
