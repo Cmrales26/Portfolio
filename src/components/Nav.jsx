@@ -142,6 +142,13 @@ const Nav = ({ theme, setTheme, colorScheme, setColorScheme }) => {
                     className="themeIcon"
                   />
                 )
+              ) : theme === "dark" ? (
+                <img
+                  onClick={toggletheme}
+                  src={system_light}
+                  alt="Sun Image"
+                  className="themeIcon"
+                />
               ) : (
                 <img
                   onClick={toggletheme}
