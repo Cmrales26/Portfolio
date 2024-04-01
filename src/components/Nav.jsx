@@ -23,18 +23,32 @@ const Nav = ({ theme, setTheme, colorScheme, setColorScheme }) => {
     ).matches;
     const defaultTheme = prefersDarkMode ? "dark" : "light";
 
-    if (storedTheme && storedScheme === "system") {
-      setTheme(defaultTheme);
-      localStorage.setItem("theme", defaultTheme);
-      setColorScheme(storedScheme);
+    const updateTheme = () => {
+      const newPrefersDarkMode = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      const newDefaultTheme = newPrefersDarkMode ? "dark" : "light";
+      setTheme(newDefaultTheme);
+      setColorScheme("system");
+      localStorage.setItem("theme", newDefaultTheme);
+      localStorage.setItem("colorScheme", "system");
+    };
+
+    if (storedScheme === "system") {
+      updateTheme();
     } else {
       const newTheme = storedTheme || defaultTheme;
       setTheme(newTheme);
       setColorScheme(newTheme);
       localStorage.setItem("theme", newTheme);
     }
+    const mediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = () => updateTheme();
+    mediaQueryList.addEventListener("change", handleChange);
 
-    localStorage.setItem("colorScheme", storedScheme);
+    return () => {
+      mediaQueryList.removeEventListener("change", handleChange);
+    };
   }, [setTheme, setColorScheme]);
 
   const toggletheme = () => {
