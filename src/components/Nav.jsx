@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import light from "../assets/theme/sun.svg";
 import dark from "../assets/theme/moon-stars.svg";
+import system from "../assets/theme/desktop.svg";
+import system_light from "../assets/theme/desktop-light.svg";
 import menulight from "../assets/icons/menu-light.svg";
 import menudark from "../assets/icons/menu.svg";
 import Lenguage from "./Lenguage";
@@ -9,28 +11,62 @@ import crosslight from "../assets/icons/times-light.svg";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 
-const Nav = ({ theme, setTheme }) => {
+const Nav = ({ theme, setTheme, colorScheme, setColorScheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation(["info"]);
+
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
-    if (storedTheme) {
+    const storedScheme = localStorage.getItem("colorScheme");
+
+    if (storedTheme && storedScheme === "system") {
       setTheme(storedTheme);
+      localStorage.setItem("theme", storedTheme);
+      setColorScheme(storedScheme);
+      localStorage.setItem("colorScheme", storedScheme);
+    } else if (storedTheme && storedScheme !== "system") {
+      setTheme(storedTheme);
+      localStorage.setItem("theme", storedTheme);
+      setColorScheme(storedScheme);
+      localStorage.setItem("colorScheme", storedScheme);
     } else {
+      localStorage.setItem("colorScheme", "System");
       const prefersDarkMode = window.matchMedia(
         "(prefers-color-scheme: dark)"
       ).matches;
 
+      localStorage.setItem("colorScheme", "system");
       const defaultTheme = prefersDarkMode ? "dark" : "light";
       setTheme(defaultTheme);
       localStorage.setItem("theme", defaultTheme);
     }
-  }, [setTheme]);
+  }, [setTheme, setColorScheme]);
 
   const toggletheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
+    const newTheme =
+      colorScheme === "dark"
+        ? "light"
+        : colorScheme === "light"
+        ? "system"
+        : colorScheme === "system"
+        ? "dark"
+        : "dark";
+
+    setColorScheme(newTheme);
+    localStorage.setItem("colorScheme", newTheme);
+
+    if (newTheme === "system") {
+      const prefersDarkMode = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      const defaultTheme = prefersDarkMode ? "dark" : "light";
+      setTheme(defaultTheme);
+      localStorage.setItem("theme", defaultTheme);
+    } else {
+      console.log(newTheme);
+      setTheme(newTheme);
+      localStorage.setItem("theme", newTheme);
+    }
   };
 
   const toggleMenu = () => {
@@ -74,22 +110,39 @@ const Nav = ({ theme, setTheme }) => {
             <li className="">
               <Lenguage theme={theme} />
             </li>
+
             <li className="ThemeSelector">
-              {theme === "dark" ? (
-                <img
-                  onClick={toggletheme}
-                  src={light}
-                  alt="Sun Image"
-                  className="themeIcon"
-                />
-              ) : (
+              {colorScheme === "dark" ? (
                 <img
                   onClick={toggletheme}
                   src={dark}
                   alt="Sun Image"
                   className="themeIcon"
                 />
-              )}
+              ) : colorScheme === "light" ? (
+                <img
+                  onClick={toggletheme}
+                  src={light}
+                  alt="Sun Image"
+                  className="themeIcon"
+                />
+              ) : colorScheme === "system" ? (
+                theme === "dark" ? (
+                  <img
+                    onClick={toggletheme}
+                    src={system_light}
+                    alt="Sun Image"
+                    className="themeIcon"
+                  />
+                ) : (
+                  <img
+                    onClick={toggletheme}
+                    src={system}
+                    alt="Sun Image"
+                    className="themeIcon"
+                  />
+                )
+              ) : null}
             </li>
           </ul>
         </li>
@@ -121,6 +174,8 @@ const Nav = ({ theme, setTheme }) => {
 Nav.propTypes = {
   theme: PropTypes.string.isRequired,
   setTheme: PropTypes.func.isRequired,
+  colorScheme: PropTypes.string.isRequired,
+  setColorScheme: PropTypes.func.isRequired,
 };
 
 export default Nav;

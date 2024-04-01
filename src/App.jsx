@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { ContactProvider } from "./context/ContactContex";
 function App() {
   const [theme, setTheme] = useState("");
+  const [colorScheme, setColorScheme] = useState("system");
 
   useEffect(() => {
     const app = document.querySelector("#app");
@@ -21,7 +22,12 @@ function App() {
   return (
     <section id="app">
       <section id="Portfolio">
-        <Nav setTheme={setTheme} theme={theme} />
+        <Nav
+          setTheme={setTheme}
+          theme={theme}
+          colorScheme={colorScheme}
+          setColorScheme={setColorScheme}
+        />
         <Header theme={theme} />
         <About />
         <IconProvider>
