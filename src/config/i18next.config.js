@@ -2,7 +2,9 @@ import i18n from "i18next";
 import backend from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
 
-const userLanguage = navigator.language || navigator.userLanguage;
+// const lenguage = localStorage.getItem("userLanguage");
+
+const userLanguage = localStorage.getItem("userLanguage") || navigator.language;
 
 localStorage.setItem("userLanguage", userLanguage);
 

@@ -31,11 +31,13 @@ const Lenguage = ({ theme }) => {
   const changeLenguagetoEs = () => {
     i18n.changeLanguage("es");
     setleng("es");
+    localStorage.setItem("userLanguage", "es-419");
     setAnchorEl(null);
   };
   const changeLenguagetoEn = () => {
     i18n.changeLanguage("en");
     setleng("en");
+    localStorage.setItem("userLanguage", "en-US");
     setAnchorEl(null);
   };
 
