@@ -22,7 +22,7 @@ export const ContactProvider = ({ children }) => {
   };
 
   ContactProvider.propTypes = {
-    children: PropTypes.isRequired,
+    children: PropTypes.object.isRequired,
   };
 
   return (

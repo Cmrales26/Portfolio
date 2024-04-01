@@ -25,7 +25,7 @@ const Nav = ({ theme, setTheme }) => {
       setTheme(defaultTheme);
       localStorage.setItem("theme", defaultTheme);
     }
-  });
+  }, [setTheme]);
 
   const toggletheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
@@ -119,8 +119,8 @@ const Nav = ({ theme, setTheme }) => {
 };
 
 Nav.propTypes = {
-  theme: PropTypes.isRequired,
-  setTheme: PropTypes.isRequired,
+  theme: PropTypes.string.isRequired,
+  setTheme: PropTypes.func.isRequired,
 };
 
 export default Nav;

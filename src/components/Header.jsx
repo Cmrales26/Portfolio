@@ -77,7 +77,7 @@ const Header = ({ theme }) => {
 };
 
 Header.propTypes = {
-  theme: PropTypes.isRequired,
+  theme: PropTypes.string.isRequired,
 };
 
 export default Header;

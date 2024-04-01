@@ -7,6 +7,7 @@ import simulators from "../assets/img/Simulators.jpg";
 import Dnsports from "../assets/img/DNSports.png";
 import BinaryTree from "../assets/img/BinaryTree.jpg";
 import { useTranslation } from "react-i18next";
+import PropTypes from "prop-types";
 
 export const ProjectContext = createContext();
 
@@ -17,7 +18,7 @@ export const useProjects = () => {
 };
 
 export const ProjectProvider = ({ children }) => {
-  const { t, i18n } = useTranslation(["info"]);
+  const { t } = useTranslation(["info"]);
   const projects = [
     {
       id: 1,
@@ -135,4 +136,8 @@ export const ProjectProvider = ({ children }) => {
       {children}
     </ProjectContext.Provider>
   );
+};
+
+ProjectProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };

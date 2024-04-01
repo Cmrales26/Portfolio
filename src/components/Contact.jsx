@@ -113,7 +113,7 @@ const Contact = ({ theme }) => {
 };
 
 Contact.propTypes = {
-  theme: PropTypes.isRequired,
+  theme: PropTypes.string.isRequired,
 };
 
 export default Contact;

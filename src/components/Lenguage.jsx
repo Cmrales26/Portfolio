@@ -94,7 +94,7 @@ const Lenguage = ({ theme }) => {
 };
 
 Lenguage.propTypes = {
-  theme: PropTypes.isRequired,
+  theme: PropTypes.string.isRequired,
 };
 
 export default Lenguage;
