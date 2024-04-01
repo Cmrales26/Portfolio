@@ -7,12 +7,13 @@ import Liknedinlight from "../assets/icons/Liknedin-light.svg";
 import Githubdark from "../assets/icons/github-dark.svg";
 import Githublight from "../assets/icons/github-light.svg";
 import resumedoc from "../assets/documents/CV_NelsonMorales_1002035487.pdf";
+import PropTypes from "prop-types";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const Header = (props) => {
   // False to chage the status
-  const [openwork, setOpenWork] = useState(true);
+  const [openwork] = useState(true);
 
   const { t } = useTranslation(["info"]);
   return (
@@ -25,14 +26,20 @@ const Header = (props) => {
           <h1>Nelson Morales</h1>
           <div className="social">
             <p>{t("charge")}</p>
-            <a href="https://www.linkedin.com/in/cmrales26/" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/cmrales26/"
+              target="_blank noopener noreferrer"
+            >
               {props.theme === "dark" ? (
                 <img src={Liknedindark} alt="Likedin Icon" />
               ) : (
                 <img src={Liknedinlight} alt="Linkedin Icon Light" />
               )}
             </a>
-            <a href="https://github.com/Cmrales26" target="_blank">
+            <a
+              href="https://github.com/Cmrales26"
+              target="_blank noopener noreferrer"
+            >
               {props.theme === "dark" ? (
                 <img src={Githubdark} alt="Github Icon " />
               ) : (
@@ -67,6 +74,10 @@ const Header = (props) => {
       </section>
     </header>
   );
+};
+
+Header.propTypes = {
+  theme: PropTypes.isRequired,
 };
 
 export default Header;

@@ -1,4 +1,5 @@
 import { createContext, useContext } from "react";
+import PropTypes from "prop-types";
 
 export const ContactContex = createContext();
 
@@ -8,16 +9,21 @@ export const useContact = () => {
   return context;
 };
 const SERVER_URL =
-  import.meta.env.VITE_SERVER_URL || "http://localhost:5500/api";
+  import.meta.env.VITE_SERVER_URL || "http://localhost:5000/api";
 
 export const ContactProvider = ({ children }) => {
   const SendEmail = async (data) => {
+    console.log(data);
     const suit = await fetch(`${SERVER_URL}/sendemail`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: data,
     });
     return suit;
+  };
+
+  ContactProvider.propTypes = {
+    children: PropTypes.isRequired,
   };
 
   return (

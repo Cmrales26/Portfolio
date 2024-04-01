@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useContact } from "../context/ContactContex";
 import toast, { Toaster } from "react-hot-toast";
+import PropTypes from "prop-types";
 
 const Contact = (props) => {
   const { SendEmail } = useContact();
@@ -16,17 +17,18 @@ const Contact = (props) => {
   const textColor = props.theme === "light" ? "#fafafa" : "#272733";
 
   const onsubmit = handleSubmit((value) => {
-    const MyPromise = new Promise(async (resolve, reject) => {
-      try {
-        const res = await SendEmail(JSON.stringify(value));
-        if (res.status === 200) {
-          resolve(t("toastSucces"));
-        } else {
-          reject(new Error(t("toastError")));
-        }
-      } catch (error) {
-        reject(error);
-      }
+    const MyPromise = new Promise((resolve, reject) => {
+      SendEmail(JSON.stringify(value))
+        .then((res) => {
+          if (res.status === 200) {
+            resolve(t("toastSucces"));
+          } else {
+            reject(new Error(t("toastError")));
+          }
+        })
+        .catch((error) => {
+          reject(error);
+        });
     });
 
     toast.promise(MyPromise, {
@@ -108,6 +110,10 @@ const Contact = (props) => {
       />
     </section>
   );
+};
+
+Contact.propTypes = {
+  theme: PropTypes.isRequired,
 };
 
 export default Contact;
