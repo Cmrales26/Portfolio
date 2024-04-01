@@ -120,49 +120,22 @@ const Nav = ({ theme, setTheme, colorScheme, setColorScheme }) => {
             </li>
 
             <li className="ThemeSelector">
-              {colorScheme === "dark" ? (
+              {colorScheme === "dark" ||
+              (colorScheme === "system" && theme === "dark") ? (
                 <img
                   onClick={toggletheme}
-                  src={dark}
-                  alt="Sun Image"
+                  src={colorScheme === "system" ? system_light : dark}
+                  alt={`${colorScheme} image`}
                   className="themeIcon"
-                />
-              ) : colorScheme === "light" ? (
-                <img
-                  onClick={toggletheme}
-                  src={light}
-                  alt="Sun Image"
-                  className="themeIcon"
-                />
-              ) : colorScheme === "system" ? (
-                theme === "dark" ? (
-                  <img
-                    onClick={toggletheme}
-                    src={system_light}
-                    alt="Sun Image"
-                    className="themeIcon"
-                  />
-                ) : (
-                  <img
-                    onClick={toggletheme}
-                    src={system}
-                    alt="Sun Image"
-                    className="themeIcon"
-                  />
-                )
-              ) : theme === "dark" ? (
-                <img
-                  onClick={toggletheme}
-                  src={system_light}
-                  alt="Sun Image"
-                  className="themeIcon"
+                  title={t("ChangeTheme")}
                 />
               ) : (
                 <img
                   onClick={toggletheme}
-                  src={system}
-                  alt="Sun Image"
+                  src={colorScheme === "system" ? system : light}
+                  alt={`${colorScheme} image`}
                   className="themeIcon"
+                  title={t("ChangeTheme")}
                 />
               )}
             </li>

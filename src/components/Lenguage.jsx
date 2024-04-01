@@ -10,11 +10,14 @@ import chveron_light from "../assets/icons/chevron-down-light.svg";
 import PropTypes from "prop-types";
 
 const Lenguage = ({ theme }) => {
-  const { i18n } = useTranslation(["info"]);
+  const { i18n, t } = useTranslation(["info"]);
   const textColor = theme === "light" ? "black" : "white";
 
+  const Lenguage = localStorage.getItem("userLanguage") || "en";
+
   const [anchorEl, setAnchorEl] = useState(null);
-  const [leng, setleng] = useState("en");
+
+  const [leng, setleng] = useState(Lenguage.split("-")[0]);
 
   const open = Boolean(anchorEl);
 
@@ -45,6 +48,7 @@ const Lenguage = ({ theme }) => {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
         className="MenuLenguage"
+        title={t("ChangeLenguage")}
       >
         {leng === "es" ? (
           <div className="menu">

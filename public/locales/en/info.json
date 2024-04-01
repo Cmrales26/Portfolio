@@ -41,5 +41,9 @@
 
   "messageerrormsg1": "Please send me a message",
 
-  "footer": "Developed by"
+  "footer": "Developed by",
+
+  "ChangeLenguage": "Change Lenguage",
+  "ChangeTheme": "Change Theme",
+  "BackTop": "Back to Top"
 }

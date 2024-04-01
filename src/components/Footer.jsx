@@ -18,7 +18,7 @@ const Footer = () => {
             </a>
           </p>
           <figure>
-            <a href="#Nav" title="Back to top">
+            <a href="#Nav" title={t("BackTop")}>
               <img src={arrowup} className="arrowUp" alt="Arrow up" />
             </a>
           </figure>
