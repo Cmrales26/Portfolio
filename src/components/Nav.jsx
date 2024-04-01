@@ -17,7 +17,7 @@ const Nav = ({ theme, setTheme, colorScheme, setColorScheme }) => {
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
-    const storedScheme = localStorage.getItem("colorScheme");
+    const storedScheme = localStorage.getItem("colorScheme") || "system";
 
     if (storedTheme && storedScheme === "system") {
       setTheme(storedTheme);
@@ -142,7 +142,14 @@ const Nav = ({ theme, setTheme, colorScheme, setColorScheme }) => {
                     className="themeIcon"
                   />
                 )
-              ) : null}
+              ) : (
+                <img
+                  onClick={toggletheme}
+                  src={system}
+                  alt="Sun Image"
+                  className="themeIcon"
+                />
+              )}
             </li>
           </ul>
         </li>
