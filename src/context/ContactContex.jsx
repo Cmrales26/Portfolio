@@ -13,7 +13,6 @@ const SERVER_URL =
 
 export const ContactProvider = ({ children }) => {
   const SendEmail = async (data) => {
-    console.log(data);
     const suit = await fetch(`${SERVER_URL}/sendemail`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },

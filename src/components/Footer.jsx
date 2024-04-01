@@ -10,7 +10,10 @@ const Footer = () => {
         <article>
           <p>
             &copy; {t("footer")}{" "}
-            <a href="https://github.com/Cmrales26" target="_blank">
+            <a
+              href="https://github.com/Cmrales26"
+              target="_blank noopener noreferrer"
+            >
               @Crmales26
             </a>
           </p>

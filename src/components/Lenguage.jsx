@@ -7,10 +7,11 @@ import es from "../assets/img/flags/Flag_of_Colombia.png";
 import en from "../assets/img/flags/us.png";
 import chveron_dark from "../assets/icons/chevron-down.svg";
 import chveron_light from "../assets/icons/chevron-down-light.svg";
+import PropTypes from "prop-types";
 
-const Lenguage = (props) => {
+const Lenguage = ({ theme }) => {
   const { i18n } = useTranslation(["info"]);
-  const textColor = props.theme === "light" ? "black" : "white";
+  const textColor = theme === "light" ? "black" : "white";
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [leng, setleng] = useState("en");
@@ -48,7 +49,7 @@ const Lenguage = (props) => {
         {leng === "es" ? (
           <div className="menu">
             <img className="flag" src={es} alt="" />
-            {props.theme === "light" ? (
+            {theme === "light" ? (
               <img src={chveron_dark} alt="" />
             ) : (
               <img src={chveron_light} alt="" />
@@ -57,7 +58,7 @@ const Lenguage = (props) => {
         ) : (
           <div className="menu">
             <img className="flag" src={en} alt="" />
-            {props.theme === "light" ? (
+            {theme === "light" ? (
               <img src={chveron_dark} alt="" />
             ) : (
               <img src={chveron_light} alt="" />
@@ -90,6 +91,10 @@ const Lenguage = (props) => {
       </Menu>
     </div>
   );
+};
+
+Lenguage.propTypes = {
+  theme: PropTypes.isRequired,
 };
 
 export default Lenguage;

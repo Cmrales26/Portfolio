@@ -4,20 +4,20 @@ import { useIcons } from "../context/Icons";
 import { ActivateAnomation } from "../Animations/ScrollAnimation";
 import { useTranslation } from "react-i18next";
 
-const Skills = (props) => {
+const Skills = ({ theme }) => {
   const { iconsdark, iconslight } = useIcons();
   const [skills, setSkills] = useState([]);
   const { t } = useTranslation(["info"]);
 
   useEffect(() => {
-    if (props.theme === "dark") {
+    if (theme === "dark") {
       setSkills(Object.values(iconsdark));
       ActivateAnomation();
     } else {
       setSkills(Object.values(iconslight));
       ActivateAnomation();
     }
-  }, [props.theme]);
+  }, [theme, iconsdark, iconslight]);
 
   return (
     <section id="Skills">
@@ -30,7 +30,8 @@ const Skills = (props) => {
             ))}
             {skills.map((icon, index) => (
               <img key={index} src={icon} alt={`Skill ${index}`} />
-            ))}          </div>
+            ))}{" "}
+          </div>
         ) : (
           <div className="scroller__inner">
             {skills.map((icon, index) => (

@@ -7,28 +7,29 @@ import Lenguage from "./Lenguage";
 import cross from "../assets/icons/times.svg";
 import crosslight from "../assets/icons/times-light.svg";
 import { useTranslation } from "react-i18next";
+import PropTypes from "prop-types";
 
-const Nav = (props) => {
+const Nav = ({ theme, setTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation(["info"]);
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
     if (storedTheme) {
-      props.setTheme(storedTheme);
+      setTheme(storedTheme);
     } else {
       const prefersDarkMode = window.matchMedia(
         "(prefers-color-scheme: dark)"
       ).matches;
 
       const defaultTheme = prefersDarkMode ? "dark" : "light";
-      props.setTheme(defaultTheme);
+      setTheme(defaultTheme);
       localStorage.setItem("theme", defaultTheme);
     }
-  }, []);
+  });
 
   const toggletheme = () => {
-    const newTheme = props.theme === "dark" ? "light" : "dark";
-    props.setTheme(newTheme);
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
   };
 
@@ -40,7 +41,7 @@ const Nav = (props) => {
     <nav id="Nav">
       <ul>
         <li className="menuitemtrigger" onClick={toggleMenu}>
-          {props.theme === "dark" ? (
+          {theme === "dark" ? (
             isOpen ? (
               <img src={cross} alt="" />
             ) : (
@@ -71,10 +72,10 @@ const Nav = (props) => {
         <li>
           <ul>
             <li className="">
-              <Lenguage theme={props.theme} />
+              <Lenguage theme={theme} />
             </li>
             <li className="ThemeSelector">
-              {props.theme === "dark" ? (
+              {theme === "dark" ? (
                 <img
                   onClick={toggletheme}
                   src={light}
@@ -115,6 +116,11 @@ const Nav = (props) => {
       </ul>
     </nav>
   );
+};
+
+Nav.propTypes = {
+  theme: PropTypes.isRequired,
+  setTheme: PropTypes.isRequired,
 };
 
 export default Nav;

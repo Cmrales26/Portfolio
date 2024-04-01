@@ -5,7 +5,7 @@ import { useContact } from "../context/ContactContex";
 import toast, { Toaster } from "react-hot-toast";
 import PropTypes from "prop-types";
 
-const Contact = (props) => {
+const Contact = ({ theme }) => {
   const { SendEmail } = useContact();
   const {
     register,
@@ -13,8 +13,8 @@ const Contact = (props) => {
     formState: { errors },
   } = useForm();
 
-  const backgroundColor = props.theme === "light" ? "#272733" : "#fafafa";
-  const textColor = props.theme === "light" ? "#fafafa" : "#272733";
+  const backgroundColor = theme === "light" ? "#272733" : "#fafafa";
+  const textColor = theme === "light" ? "#fafafa" : "#272733";
 
   const onsubmit = handleSubmit((value) => {
     const MyPromise = new Promise((resolve, reject) => {

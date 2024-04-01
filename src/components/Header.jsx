@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const Header = (props) => {
+const Header = ({ theme }) => {
   // False to chage the status
   const [openwork] = useState(true);
 
@@ -30,7 +30,7 @@ const Header = (props) => {
               href="https://www.linkedin.com/in/cmrales26/"
               target="_blank noopener noreferrer"
             >
-              {props.theme === "dark" ? (
+              {theme === "dark" ? (
                 <img src={Liknedindark} alt="Likedin Icon" />
               ) : (
                 <img src={Liknedinlight} alt="Linkedin Icon Light" />
@@ -40,7 +40,7 @@ const Header = (props) => {
               href="https://github.com/Cmrales26"
               target="_blank noopener noreferrer"
             >
-              {props.theme === "dark" ? (
+              {theme === "dark" ? (
                 <img src={Githubdark} alt="Github Icon " />
               ) : (
                 <img src={Githublight} alt="Github Icon dark" />
