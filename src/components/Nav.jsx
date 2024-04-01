@@ -29,7 +29,7 @@ const Nav = ({ theme, setTheme, colorScheme, setColorScheme }) => {
       setTheme(storedTheme);
       localStorage.setItem("theme", storedTheme);
       setColorScheme(storedScheme);
-      localStorage.setItem("colorScheme", storedScheme);
+      localStorage.setItem("colorScheme", storedTheme);
     } else {
       localStorage.setItem("colorScheme", "System");
       const prefersDarkMode = window.matchMedia(
