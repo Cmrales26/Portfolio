@@ -1,11 +1,5 @@
 import { useContext } from "react";
 import { createContext } from "react";
-import Iconstore from "../assets/img/IconStore.jpeg";
-import Recipes from "../assets/img/RecipesWebapp.svg";
-import sempiterno from "../assets/img/Sempiterno.jpg";
-import simulators from "../assets/img/Simulators.jpg";
-import Dnsports from "../assets/img/DNSports.png";
-import BinaryTree from "../assets/img/BinaryTree.jpg";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 
@@ -23,7 +17,6 @@ export const ProjectProvider = ({ children }) => {
     {
       id: 1,
       title: "IconStore",
-      img: Iconstore,
       link: "https://rubrica-c3-client.vercel.app/",
       status: "active",
       info: t("projectInfo_1"),
@@ -41,10 +34,9 @@ export const ProjectProvider = ({ children }) => {
     },
     {
       id: 2,
-      title: "Recipes Web App",
-      link: "",
-      img: Recipes,
-      status: "Progress",
+      title: "Admin Dashboard",
+      link: "https://admin-dashboard-delta-navy.vercel.app/",
+      status: "active",
       info: t("projectInfo_2"),
       tech: [
         {
@@ -63,7 +55,6 @@ export const ProjectProvider = ({ children }) => {
       id: 3,
       link: "https://proyectosempiternosoft.000webhostapp.com/",
       title: "Sempiterno",
-      img: sempiterno,
       status: "active",
       info: t("projectInfo_3"),
       tech: [
@@ -81,7 +72,6 @@ export const ProjectProvider = ({ children }) => {
       id: 4,
       title: "kinematic simulators",
       link: "https://cmrales26.github.io/Modelos_Ingenieria/index.html",
-      img: simulators,
       status: "active",
       info: t("projectInfo_4"),
       tech: [
@@ -98,7 +88,6 @@ export const ProjectProvider = ({ children }) => {
       id: 5,
       title: "DN sports",
       link: "https://rubrica-c1-w2.vercel.app/",
-      img: Dnsports,
       status: "active",
       info: t("projectInfo_5"),
       tech: [
@@ -117,7 +106,6 @@ export const ProjectProvider = ({ children }) => {
       id: 6,
       title: "Binary Tree",
       link: "https://binarytreephpvis.000webhostapp.com/",
-      img: BinaryTree,
       status: "active",
       info: t("projectInfo_6"),
       tech: [
