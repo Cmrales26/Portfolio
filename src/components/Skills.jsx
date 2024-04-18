@@ -26,7 +26,12 @@ const Skills = ({ theme }) => {
         {ActivateAnomation() ? (
           <div className="scroller__inner">
             {skills.map((icon, index) => (
-              <img key={index} src={icon} alt={`Skill ${index}`} />
+              <img
+                // title={}
+                key={index}
+                src={icon}
+                alt={`Skill ${index}`}
+              />
             ))}
             {skills.map((icon, index) => (
               <img key={index} src={icon} alt={`Skill ${index}`} />
