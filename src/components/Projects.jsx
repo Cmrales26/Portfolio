@@ -1,11 +1,11 @@
 import { useTranslation } from "react-i18next";
 // import LinkIcon from "../assets/icons/alternate-external-link.svg";
 import Link from "../assets/icons/link-intact.svg";
-import { useIcons } from "../context/Icons";
+// import { useIcons } from "../context/Icons";
 import { useProjects } from "../context/Projects";
 const Projects = () => {
   const { projects } = useProjects();
-  const { iconsdark } = useIcons();
+  // const { iconsdark } = useIcons();
 
   const { t } = useTranslation(["info"]);
   return (
