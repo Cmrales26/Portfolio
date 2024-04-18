@@ -22,12 +22,9 @@ export const ProjectProvider = ({ children }) => {
       info: t("projectInfo_1"),
       tech: [
         {
-          node: "node",
           vite: "vite",
           sql: "sql",
           express: "express",
-          react: "react",
-          js: "js",
           css: "css",
         },
       ],
@@ -40,13 +37,9 @@ export const ProjectProvider = ({ children }) => {
       info: t("projectInfo_2"),
       tech: [
         {
-          node: "node",
           vite: "vite",
           sql: "sql",
           express: "express",
-          react: "react",
-          js: "js",
-          css: "css",
           material: "material",
         },
       ],
@@ -94,10 +87,7 @@ export const ProjectProvider = ({ children }) => {
         {
           node: "node",
           vite: "vite",
-          react: "react",
           js: "js",
-          css: "css",
-          html: "html",
         },
       ],
     },
