@@ -20,7 +20,7 @@ const Projects = () => {
             rel="noreferrer"
             key={project.id}
             style={{ textDecoration: "none" }}
-            title="Click to Whatch the Project"
+            title={t("SeePage")}
           >
             <div>
               <div className="titleandlink">
