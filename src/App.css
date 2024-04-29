@@ -610,6 +610,9 @@ footer {
   .scroller[data-animated="true"] .scroller__inner {
     width: 2270px !important;
   }
+  .scroller[data-animated="true"] .scroller__inner:hover {
+    animation-play-state: running !important;
+  }
 
   @keyframes scroll {
     to {
@@ -671,5 +674,8 @@ footer {
         }
       }
     }
+  }
+  .scroller[data-animated="true"] .scroller__inner:hover {
+    animation-play-state: running !important;
   }
 }
