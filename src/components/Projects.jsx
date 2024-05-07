@@ -10,7 +10,7 @@ const Projects = () => {
   const { t } = useTranslation(["info"]);
   return (
     <section id="Projects">
-      <h1>{t("projectTitle")}</h1>
+      <h2>{t("projectTitle")}</h2>
       <div className="projects">
         {projects.map((project) => (
           <a

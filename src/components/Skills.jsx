@@ -21,7 +21,7 @@ const Skills = ({ theme }) => {
 
   return (
     <section id="Skills">
-      <h1>{t("skillsTitle")}</h1>
+      <h2>{t("skillsTitle")}</h2>
       <div className="scroller">
         {ActivateAnomation() ? (
           <div className="scroller__inner">

@@ -259,7 +259,7 @@ header {
 #Aboutme {
   margin-top: 4rem;
 
-  h1 {
+  h2 {
     font-size: 30px;
     color: var(--textaccent) !important;
     margin-bottom: 1rem;
@@ -278,7 +278,7 @@ header {
 #Projects {
   margin-top: 2rem;
 
-  h1 {
+  h2 {
     font-size: 30px;
     color: var(--textaccent) !important;
     margin-bottom: 1rem;
@@ -342,7 +342,7 @@ header {
 }
 
 #Skills {
-  h1 {
+  h2 {
     color: var(--textaccent) !important;
     font-size: 30px;
     margin-bottom: 2rem;
@@ -424,7 +424,7 @@ header {
     width: 100%;
   }
 
-  h1 {
+  h2 {
     font-size: 30px;
     color: var(--textaccent) !important;
   }

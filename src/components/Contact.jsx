@@ -40,7 +40,7 @@ const Contact = ({ theme }) => {
   const { t } = useTranslation(["info"]);
   return (
     <section id="contact">
-      <h1>{t("contactTitle")}</h1>
+      <h2>{t("contactTitle")}</h2>
 
       <Box
         component="form"

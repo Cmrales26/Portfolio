@@ -4,7 +4,7 @@ const About = () => {
   const { t } = useTranslation(["info"]);
   return (
     <section id="Aboutme">
-      <h1>{t("aboutTitle")}</h1>
+      <h2>{t("aboutTitle")}</h2>
       <p>
         {t("aboutInfo_1")}
         <span className="accenttext">{t("aboutInfo_1_span")}</span>
