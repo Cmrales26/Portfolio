@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;700&display=swap');
 
 :root {
   /* DARK */
@@ -33,11 +33,11 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Onest", sans-serif;
+  font-family: 'Onest', sans-serif;
   transition: ease 0.2s;
 }
 
-#app[theme="light"] {
+#app[theme='light'] {
   background-color: var(--lightBackground);
 
   h1 {
@@ -116,7 +116,7 @@ nav {
       li::before {
         transition: ease-in-out 0.5s;
         height: 3px;
-        content: "";
+        content: '';
         position: absolute;
         border-radius: 5px;
         background-color: #ffa500;
@@ -234,6 +234,7 @@ header {
     }
 
     .resume {
+      cursor: pointer;
       border-radius: 5px;
       padding: 0.5rem 1rem;
       height: fit-content;
@@ -367,7 +368,7 @@ header {
     }
   }
 
-  .scroller[data-animated="true"] {
+  .scroller[data-animated='true'] {
     overflow: hidden;
     -webkit-mask: linear-gradient(
       90deg,
@@ -385,12 +386,12 @@ header {
     );
   }
 
-  .scroller[data-animated="true"] .scroller__inner {
+  .scroller[data-animated='true'] .scroller__inner {
     width: 5700px;
     flex-wrap: nowrap;
     animation: scroll 15s linear infinite;
   }
-  .scroller[data-animated="true"] .scroller__inner:hover {
+  .scroller[data-animated='true'] .scroller__inner:hover {
     animation-play-state: paused;
   }
 }
@@ -607,10 +608,10 @@ footer {
     }
   }
 
-  .scroller[data-animated="true"] .scroller__inner {
+  .scroller[data-animated='true'] .scroller__inner {
     width: 2270px !important;
   }
-  .scroller[data-animated="true"] .scroller__inner:hover {
+  .scroller[data-animated='true'] .scroller__inner:hover {
     animation-play-state: running !important;
   }
 
@@ -675,7 +676,7 @@ footer {
       }
     }
   }
-  .scroller[data-animated="true"] .scroller__inner:hover {
+  .scroller[data-animated='true'] .scroller__inner:hover {
     animation-play-state: running !important;
   }
 }
