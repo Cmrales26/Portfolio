@@ -9,6 +9,13 @@
   "CloseToWork": "Not available",
   "Resume": "Resume",
 
+  "professionalTitle": "👨‍💻 Professional Profile",
+  "professionalPosition_1": "Software Developer",
+  "professionalDescription_1": "I designed and developed interactive user interfaces with React and TypeScript, optimizing user experience. Managed and optimized PostgreSQL databases to improve performance and scalability. Created and maintained microservices and RESTful APIs with Python and Node.js, implementing and deploying applications in Docker environments to ensure efficiency and consistency. Additionally, managed version control with Git and GitHub, collaborating on code reviews to ensure quality and integrity.",
+  "professionalPosition_2": "Software Developer (Freelance)",
+  "professionalDescription_2": "I designed and developed a financial simulator with an administrative module for managing rates, configuration, and user administration. Implemented the backend with Node.js, Express, TypeScript, Prisma ORM, and MongoDB, incorporating JWT for authentication, Nodemailer (SMTP) for notifications, and Puppeteer for document generation. Developed a dynamic and efficient user interface with React, Vite, TypeScript, Zustand, Ant Design, Bootstrap, and Axios. Additionally, documented the project with a technical manual, including database diagrams, architecture, and sequence. Managed version control and collaboration through Git and GitHub.",
+  "present": "Present",
+
   "aboutTitle": "📌 About me",
   "aboutInfo_1": "Hello 👋, I'm a systems engineering student passionate about",
   "aboutInfo_1_span": " modern web development.",
@@ -23,6 +30,13 @@
   "projectInfo_4": "A web platform offers interactive simulators for kinematics and Newton's laws. Users input study values to generate graphic animations and view detailed results in tables, providing an educational and intuitive experience.",
   "projectInfo_5": " Browse top athletes and sports categorized by type on our platform. Discover the best in each category and suggest new sports to expand our coverage.",
   "projectInfo_6": "Create your own binary tree interactively on our platform. Once constructed, explore various tree traversals, examine leaf nodes, and check if the tree is complete.",
+
+  "loadMore": "Load More",
+  "loadLess": "Load Less",
+
+  "publisher": "Publisher",
+
+  "research_and_presentationsTitle": "🔍 Research and Presentations",
 
   "skillsTitle": "🎯 Skills",
 

@@ -1,16 +1,16 @@
-import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
-import { useIcons } from "../context/Icons";
-import { ActivateAnomation } from "../Animations/ScrollAnimation";
-import { useTranslation } from "react-i18next";
+import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
+import { useIcons } from '../context/Icons';
+import { ActivateAnomation } from '../Animations/ScrollAnimation';
+import { useTranslation } from 'react-i18next';
 
 const Skills = ({ theme }) => {
   const { iconsdark, iconslight } = useIcons();
   const [skills, setSkills] = useState([]);
-  const { t } = useTranslation(["info"]);
+  const { t } = useTranslation(['info']);
 
   useEffect(() => {
-    if (theme === "dark") {
+    if (theme === 'dark') {
       setSkills(Object.values(iconsdark));
       ActivateAnomation();
     } else {
@@ -20,25 +20,20 @@ const Skills = ({ theme }) => {
   }, [theme, iconsdark, iconslight]);
 
   return (
-    <section id="Skills">
-      <h2>{t("skillsTitle")}</h2>
-      <div className="scroller">
+    <section id='Skills'>
+      <h2>{t('skillsTitle')}</h2>
+      <div className='scroller'>
         {ActivateAnomation() ? (
-          <div className="scroller__inner">
+          <div className='scroller__inner'>
             {skills.map((icon, index) => (
-              <img
-                // title={}
-                key={index}
-                src={icon}
-                alt={`Skill ${index}`}
-              />
+              <img key={index} src={icon} alt={`Skill ${index}`} />
             ))}
             {skills.map((icon, index) => (
               <img key={index} src={icon} alt={`Skill ${index}`} />
-            ))}{" "}
+            ))}{' '}
           </div>
         ) : (
-          <div className="scroller__inner">
+          <div className='scroller__inner'>
             {skills.map((icon, index) => (
               <img key={index} src={icon} alt={`Skill ${index}`} />
             ))}
@@ -50,7 +45,7 @@ const Skills = ({ theme }) => {
 };
 
 Skills.propTypes = {
-  theme: PropTypes.string.isRequired,
+  theme: PropTypes.string.isRequired
 };
 
 export default Skills;

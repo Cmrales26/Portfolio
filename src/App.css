@@ -4,11 +4,13 @@
   /* DARK */
   --darkBackground: #272733;
   --darkTextColor: #f5f5f5;
+  --darkTextMuted: #a0a0a0;
   --darkInputColor: #585870;
 
   /* Light */
   --lightBackground: #fafafa;
   --lightTextColor: #1e1e1e;
+  --lightTextMuted: #a0a0a0;
   --lightInputColor: #f5f5f5;
 
   --textaccent: #ffa500;
@@ -68,6 +70,24 @@ html {
       p {
         color: var(--lightTextColor) !important;
       }
+    }
+  }
+  .timeline-content {
+    p {
+      margin-top: rem;
+      color: var(--lightTextColor);
+    }
+  }
+
+  .research {
+    background-color: var(--lightInputColor);
+    .title {
+      h3 {
+        color: var(--lightTextColor);
+      }
+    }
+    p {
+      color: var(--lightTextMuted) !important;
     }
   }
 }
@@ -276,6 +296,46 @@ header {
   }
 }
 
+#professional {
+  margin-top: 4rem;
+  h2 {
+    font-size: 30px;
+    color: var(--textaccent) !important;
+    margin-bottom: 1rem;
+  }
+  .timeline-content {
+    h3 {
+      color: var(--textaccent) !important;
+    }
+    p {
+      margin-top: rem;
+      color: var(--darkTextColor);
+    }
+    .position-from {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    .description {
+      text-align: start;
+      text-wrap: wrap;
+    }
+  }
+  button {
+    background-color: var(--textaccent);
+    color: var(--darkBackground);
+    text-transform: capitalize;
+  }
+  .MuiStack-root,
+  .css-pl8gqh-MuiStack-root {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: end;
+  }
+}
+
 #Projects {
   margin-top: 2rem;
 
@@ -339,6 +399,89 @@ header {
       border-radius: 5px;
       font-size: 13px;
     }
+  }
+  button {
+    background-color: var(--textaccent);
+    color: var(--darkBackground);
+    text-transform: capitalize;
+  }
+  .MuiStack-root,
+  .css-pl8gqh-MuiStack-root {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: end;
+  }
+}
+
+#Research {
+  margin-top: 2rem;
+
+  h2 {
+    font-size: 30px;
+    color: var(--textaccent) !important;
+    margin-bottom: 1rem;
+  }
+  .researches {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .research {
+    position: relative;
+    background-color: var(--darkInputColor);
+    border-radius: 5px;
+    padding: 1rem;
+    transition: opacity 0.6s ease;
+  }
+
+  .researches:hover > :not(:hover) {
+    opacity: 0.5;
+  }
+
+  .title {
+    margin-bottom: 2px;
+    h3 {
+      color: var(--darkTextColor);
+      font-weight: bold;
+    }
+  }
+  .authors {
+    margin-top: 0.5rem;
+    font-size: 15px;
+  }
+  p {
+    color: var(--darkTextMuted) !important;
+  }
+  .publicationInfo {
+    margin-top: 0.5rem;
+    font-size: 15px;
+    .event {
+      margin-bottom: 0.4rem;
+    }
+    .eventPlace {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .title {
+      font-weight: bold !important;
+    }
+    .ISBN {
+      .id {
+        text-decoration: underline;
+      }
+    }
+  }
+  button {
+    background-color: var(--textaccent);
+    color: var(--darkBackground);
+    text-transform: capitalize;
+  }
+  .MuiStack-root,
+  .css-pl8gqh-MuiStack-root {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: end;
   }
 }
 
