@@ -1,111 +1,111 @@
-import { Box, Button, Stack, TextField } from "@mui/material";
-import { useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
-import { useContact } from "../context/ContactContex";
-import toast, { Toaster } from "react-hot-toast";
-import PropTypes from "prop-types";
+import { Box, Button, Stack, TextField } from '@mui/material';
+import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+import { useContact } from '../context/ContactContex';
+import toast, { Toaster } from 'react-hot-toast';
+import PropTypes from 'prop-types';
 
 const Contact = ({ theme }) => {
   const { SendEmail } = useContact();
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors }
   } = useForm();
 
-  const backgroundColor = theme === "light" ? "#272733" : "#fafafa";
-  const textColor = theme === "light" ? "#fafafa" : "#272733";
+  const backgroundColor = theme === 'light' ? '#272733' : '#fafafa';
+  const textColor = theme === 'light' ? '#fafafa' : '#272733';
 
-  const onsubmit = handleSubmit((value) => {
+  const onsubmit = handleSubmit(value => {
     const MyPromise = new Promise((resolve, reject) => {
       SendEmail(JSON.stringify(value))
-        .then((res) => {
+        .then(res => {
           if (res.status === 200) {
-            resolve(t("toastSucces"));
+            resolve(t('toastSucces'));
           } else {
-            reject(new Error(t("toastError")));
+            reject(new Error(t('toastError')));
           }
         })
-        .catch((error) => {
+        .catch(error => {
           reject(error);
         });
     });
 
     toast.promise(MyPromise, {
-      loading: t("toastLoading"),
-      success: t("toastSucces"),
-      error: t("toastError"),
+      loading: t('toastLoading'),
+      success: t('toastSucces'),
+      error: t('toastError')
     });
   });
-  const { t } = useTranslation(["info"]);
+  const { t } = useTranslation(['info']);
   return (
-    <section id="contact">
-      <h2>{t("contactTitle")}</h2>
+    <section id='contact'>
+      <h2>{t('contactTitle')}</h2>
 
       <Box
-        component="form"
+        component='form'
         sx={{
-          "& > :not(style)": { m: 1, width: "25ch" },
+          '& > :not(style)': { m: 1, width: '25ch' }
         }}
         noValidate
-        autoComplete="off"
+        autoComplete='off'
         onSubmit={onsubmit}
       >
-        <div className="email">
+        <div className='email'>
           <TextField
             required
-            label={t("contactlabel1")}
-            type="email"
-            variant="outlined"
-            {...register("email", {
+            label={t('contactlabel1')}
+            type='email'
+            variant='outlined'
+            {...register('email', {
               required: {
                 value: true,
-                message: t("emailerrormsg1"),
+                message: t('emailerrormsg1')
               },
               maxLength: {
                 value: 100,
-                message: t("emailerrormsg2"),
+                message: t('emailerrormsg2')
               },
               pattern: {
                 value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                message: t("emailerrormsg3"),
-              },
+                message: t('emailerrormsg3')
+              }
             })}
           />
-          {errors.email && <div className="error">{errors.email.message}</div>}
+          {errors.email && <div className='error'>{errors.email.message}</div>}
         </div>
-        <div className="message">
+        <div className='message'>
           <TextField
             required
-            label={t("contactlabel2")}
-            type="text"
+            label={t('contactlabel2')}
+            type='text'
             multiline
-            variant="outlined"
+            variant='outlined'
             minRows={7}
-            {...register("message", {
+            {...register('message', {
               required: {
                 value: true,
-                message: t("messageerrormsg1"),
-              },
+                message: t('messageerrormsg1')
+              }
             })}
           />
           {errors.message && (
-            <div className="error">{errors.message.message}</div>
+            <div className='error'>{errors.message.message}</div>
           )}
         </div>
         <Stack>
-          <Button variant="contained" type="submit">
-            {t("contactbtn")}
+          <Button variant='contained' type='submit'>
+            {t('contactbtn')}
           </Button>
         </Stack>
       </Box>
       <Toaster
-        position="bottom-center"
+        position='bottom-center'
         toastOptions={{
           style: {
             background: backgroundColor,
-            color: textColor,
-          },
+            color: textColor
+          }
         }}
       />
     </section>
@@ -113,7 +113,7 @@ const Contact = ({ theme }) => {
 };
 
 Contact.propTypes = {
-  theme: PropTypes.string.isRequired,
+  theme: PropTypes.string.isRequired
 };
 
 export default Contact;
