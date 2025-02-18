@@ -1,25 +1,25 @@
-import { useTranslation } from "react-i18next";
-import arrowup from "../assets/icons/up-arrow.svg";
+import { useTranslation } from 'react-i18next';
+import arrowup from '../assets/icons/up-arrow.svg';
 
 const Footer = () => {
-  const { t } = useTranslation(["info"]);
+  const { t } = useTranslation(['info']);
   return (
     <>
       <footer>
         <hr />
         <article>
           <p>
-            &copy; {t("footer")}{" "}
+            &copy; {t('footer')}{' '}
             <a
-              href="https://github.com/Cmrales26"
-              target="_blank noopener noreferrer"
+              href='https://github.com/Cmrales26'
+              target='_blank noopener noreferrer'
             >
               @Crmales26
             </a>
           </p>
           <figure>
-            <a href="#Nav" title={t("BackTop")}>
-              <img src={arrowup} className="arrowUp" alt="Arrow up" />
+            <a href='#Nav' title={t('BackTop')}>
+              <img src={arrowup} className='arrowUp' alt='Arrow up' />
             </a>
           </figure>
         </article>

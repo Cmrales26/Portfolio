@@ -9,6 +9,13 @@
   "CloseToWork": "No disponible",
   "Resume": "Currículum",
 
+  "professionalTitle": "👨‍💻 Perfil Profesional",
+  "professionalPosition_1": "Desarrollador de Software",
+  "professionalDescription_1": "Diseñé y desarrollé interfaces de usuario interactivas con React y TypeScript, optimizando la experiencia del usuario. Gestioné y optimicé bases de datos PostgreSQL para mejorar el rendimiento y la escalabilidad. Creé y mantuve microservicios y APIs RESTful con Python y Node.js, implementando y desplegando aplicaciones en entornos Docker para garantizar eficiencia y consistencia. Además, administré el control de versiones con Git y GitHub, colaborando en revisiones de código para asegurar su calidad e integridad.",
+  "professionalPosition_2": "Desarrollador de Software (Freelance)",
+  "professionalDescription_2": "Diseñé y desarrollé un simulador financiero con un módulo administrativo para la gestión de tarifas, configuración y administración de usuarios. Implementé el backend con Node.js, Express, TypeScript, Prisma ORM y MongoDB, incorporando JWT para autenticación, Nodemailer (SMTP) para notificaciones y Puppeteer para generación de documentos. Desarrollé una interfaz de usuario dinámica y eficiente con React, Vite, TypeScript, Zustand, Ant Design, Bootstrap y Axios. Además, documenté el proyecto con un manual técnico, incluyendo diagramas de base de datos, arquitectura y secuencia. Gestioné el control de versiones y la colaboración a través de Git y GitHub.",
+  "present": "Actualidad",
+
   "aboutTitle": "📌 Acerca de mí",
   "aboutInfo_1": "Hola 👋, soy estudiante de ingeniería de sistemas apasionado por",
   "aboutInfo_1_span": " el desarrollo web moderno.",
@@ -23,6 +30,13 @@
   "projectInfo_4": "Una plataforma web ofrece simuladores interactivos para la cinemática y las leyes de Newton. Los usuarios ingresan valores de estudio para generar animaciones gráficas y ver resultados detallados en tablas, proporcionando una experiencia educativa e intuitiva.",
   "projectInfo_5": "Explora a los mejores atletas y deportes categorizados por tipo en nuestra plataforma. Descubre lo mejor de cada categoría y sugiere nuevos deportes para expandir nuestra cobertura.",
   "projectInfo_6": "Crea tu propio árbol binario de manera interactiva en nuestra plataforma. Una vez construido, explora varios recorridos del árbol, examina nodos hoja y verifica si el árbol está completo.",
+
+  "loadMore": "Cargar Más",
+  "loadLess": "Cargar Menos",
+
+  "publisher": "Editorial",
+
+  "research_and_presentationsTitle": "🔍 Investigaciones y Presentaciones",
 
   "skillsTitle": "🎯 Habilidades",
 

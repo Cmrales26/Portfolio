@@ -6,7 +6,7 @@ import Liknedindark from '../assets/icons/Liknedin-dark.svg';
 import Liknedinlight from '../assets/icons/Liknedin-light.svg';
 import Githubdark from '../assets/icons/github-dark.svg';
 import Githublight from '../assets/icons/github-light.svg';
-import resumedoc from '../assets/documents/CV_NelsonMorales_1002035487.pdf';
+// import resumedoc from '../assets/documents/CV_NelsonMorales_1002035487.pdf';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
