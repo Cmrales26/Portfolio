@@ -9,8 +9,9 @@ const About = () => {
         {t('aboutInfo_1')}
         <span className='accenttext'>{t('aboutInfo_1_span')}</span>
         {t('aboutInfo_2')}
-        <span className='accenttext'>{t('aboutInfo_2_span')}</span>{' '}
         {t('aboutInfo_3')}
+        <span className='accenttext'>{t('aboutInfo_3_span')}</span>{' '}
+        {t('aboutInfo_4')}
       </p>
     </section>
   );

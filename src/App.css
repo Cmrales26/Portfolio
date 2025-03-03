@@ -72,6 +72,17 @@ html {
       }
     }
   }
+
+  header {
+    .mystatus {
+      .resume {
+        p {
+          color: var(--darkTextColor) !important;
+        }
+      }
+    }
+  }
+
   .timeline-content {
     p {
       margin-top: rem;
@@ -262,11 +273,9 @@ header {
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      color: var(--darkTextColor);
       transition: ease-out 0.3s;
 
-      a {
-        text-decoration: none;
+      p {
         color: var(--darkTextColor);
       }
     }
