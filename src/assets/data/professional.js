@@ -12,7 +12,15 @@ export const ProfessionalExperience = [
     company: 'Roxvan SAS',
     position: 'professionalPosition_1',
     from: 'Jun 2024',
-    to: 'present',
+    to: 'Jul 2025',
     description: 'professionalDescription_1'
+  },
+  {
+    id: 3,
+    company: 'Infinity Tech Consulting',
+    position: 'professionalPosition_3',
+    from: 'Jul 2025',
+    to: 'present',
+    description: 'professionalDescription_3'
   }
 ];

@@ -34,8 +34,6 @@ const ProfessionalExperience = () => {
     return dateB.getTime() - dateA.getTime(); // Orden descendente por fecha
   });
 
-  console.log(sortedData);
-
   return (
     <section id='professional'>
       <h2>{t('professionalTitle')}</h2>
