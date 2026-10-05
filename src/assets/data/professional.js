@@ -20,7 +20,15 @@ export const ProfessionalExperience = [
     company: 'Infinity Tech Consulting',
     position: 'professionalPosition_3',
     from: 'Jul 2025',
-    to: 'present',
+    to: 'Jun 2026',
     description: 'professionalDescription_3'
+  },
+  {
+    id: 4,
+    company: 'Lorry',
+    position: 'professionalPosition_4',
+    from: 'May 2026',
+    to: 'present',
+    description: 'professionalDescription_4'
   }
 ];
