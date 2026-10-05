@@ -14,4 +14,6 @@ i18n
   .init({
     fallbackLng: "en",
     lng: userLanguage.split("-")[0],
+    ns: ["info"],
+    defaultNS: "info",
   });

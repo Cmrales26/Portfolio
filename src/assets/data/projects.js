@@ -31,7 +31,7 @@ export const projects = [
   },
   {
     id: 3,
-    link: 'https://proyectosempiternosoft.000webhostapp.com/',
+    link: 'https://github.com/Cmrales26/Sempiterno',
     title: 'Sempiterno',
     status: 'active',
     info: 'projectInfo_3',
@@ -80,7 +80,7 @@ export const projects = [
   {
     id: 6,
     title: 'Binary Tree',
-    link: 'https://binarytreephpvis.000webhostapp.com/',
+    link: 'https://github.com/Cmrales26/Arboles_PHP_VIS',
     status: 'active',
     info: 'projectInfo_6',
     tech: [

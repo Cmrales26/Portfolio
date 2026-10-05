@@ -14,7 +14,7 @@ const Footer = () => {
               href='https://github.com/Cmrales26'
               target='_blank noopener noreferrer'
             >
-              @Crmales26
+              @Cmrales26
             </a>
           </p>
           <figure>

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useIcons } from '../context/Icons';
 import { ActivateAnomation } from '../Animations/ScrollAnimation';
 import { useTranslation } from 'react-i18next';
+import { Tooltip } from '@mui/material';
 
 const Skills = ({ theme }) => {
   const { iconsdark, iconslight } = useIcons();
@@ -10,14 +11,16 @@ const Skills = ({ theme }) => {
   const { t } = useTranslation(['info']);
 
   useEffect(() => {
-    if (theme === 'dark') {
-      setSkills(Object.values(iconsdark));
-      ActivateAnomation();
-    } else {
-      setSkills(Object.values(iconslight));
-      ActivateAnomation();
-    }
+    const icons = theme === 'dark' ? iconsdark : iconslight;
+    setSkills(Object.entries(icons).map(([name, icon]) => ({ name, icon })));
+    ActivateAnomation();
   }, [theme, iconsdark, iconslight]);
+
+  const renderSkill = (skill, index) => (
+    <Tooltip key={index} title={t(`skillName_${skill.name}`)} arrow>
+      <img src={skill.icon} alt={skill.name} />
+    </Tooltip>
+  );
 
   return (
     <section id='Skills'>
@@ -25,19 +28,11 @@ const Skills = ({ theme }) => {
       <div className='scroller'>
         {ActivateAnomation() ? (
           <div className='scroller__inner'>
-            {skills.map((icon, index) => (
-              <img key={index} src={icon} alt={`Skill ${index}`} />
-            ))}
-            {skills.map((icon, index) => (
-              <img key={index} src={icon} alt={`Skill ${index}`} />
-            ))}{' '}
+            {skills.map(renderSkill)}
+            {skills.map((skill, index) => renderSkill(skill, `dup-${index}`))}
           </div>
         ) : (
-          <div className='scroller__inner'>
-            {skills.map((icon, index) => (
-              <img key={index} src={icon} alt={`Skill ${index}`} />
-            ))}
-          </div>
+          <div className='scroller__inner'>{skills.map(renderSkill)}</div>
         )}
       </div>
     </section>

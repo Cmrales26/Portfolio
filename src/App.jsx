@@ -32,8 +32,8 @@ function App() {
         <Header theme={theme} />
         <About />
         <ProfesionalExperience />
-        <Projects />
         <Research />
+        <Projects />
         <IconProvider>
           <Skills theme={theme} />
         </IconProvider>

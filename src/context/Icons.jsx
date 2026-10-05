@@ -20,6 +20,19 @@ import sqllight from "../assets/icons/Skills/mysql_Light.svg";
 import phplight from "../assets/icons/Skills/php_light.svg";
 import expresslight from "../assets/icons/Skills/expressjs_light.svg";
 
+import typescript from "../assets/icons/Skills/typescript.svg";
+import aws from "../assets/icons/Skills/aws.svg";
+import n8n from "../assets/icons/Skills/n8n.svg";
+import reactquery from "../assets/icons/Skills/reactquery.svg";
+import gemini from "../assets/icons/Skills/gemini.svg";
+
+import nextjsDark from "../assets/icons/Skills/nextjs_dark.svg";
+import nextjsLight from "../assets/icons/Skills/nextjs_light.svg";
+import djangoDark from "../assets/icons/Skills/django_dark.svg";
+import djangoLight from "../assets/icons/Skills/django_light.svg";
+import mqttDark from "../assets/icons/Skills/mqtt_dark.svg";
+import mqttLight from "../assets/icons/Skills/mqtt_light.svg";
+
 export const IconsContext = createContext();
 
 export const useIcons = () => {
@@ -44,6 +57,14 @@ export const IconProvider = ({ children }) => {
     html: html,
     python: python,
     material: material,
+    nextjs: nextjsDark,
+    typescript: typescript,
+    aws: aws,
+    django: djangoDark,
+    mqtt: mqttDark,
+    n8n: n8n,
+    reactquery: reactquery,
+    gemini: gemini,
   };
 
   const iconslight = {
@@ -61,6 +82,14 @@ export const IconProvider = ({ children }) => {
     html: html,
     python: python,
     material: material,
+    nextjs: nextjsLight,
+    typescript: typescript,
+    aws: aws,
+    django: djangoLight,
+    mqtt: mqttLight,
+    n8n: n8n,
+    reactquery: reactquery,
+    gemini: gemini,
   };
   return (
     <IconsContext.Provider value={{ iconsdark, iconslight }}>

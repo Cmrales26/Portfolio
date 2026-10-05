@@ -84,23 +84,33 @@ const Nav = ({ theme, setTheme, colorScheme, setColorScheme }) => {
   return (
     <nav id='Nav'>
       <ul>
-        <li className='menuitemtrigger' onClick={toggleMenu}>
-          {theme === 'dark' ? (
-            isOpen ? (
-              <img src={cross} alt='' />
+        <li className='menuitemtrigger'>
+          <button
+            type='button'
+            onClick={toggleMenu}
+            aria-label={isOpen ? t('CloseMenu') : t('OpenMenu')}
+            aria-expanded={isOpen}
+          >
+            {theme === 'dark' ? (
+              isOpen ? (
+                <img src={cross} alt='' />
+              ) : (
+                <img src={menulight} alt='' />
+              )
+            ) : isOpen ? (
+              <img src={crosslight} alt='' />
             ) : (
-              <img src={menulight} alt='' />
-            )
-          ) : isOpen ? (
-            <img src={crosslight} alt='' />
-          ) : (
-            <img src={menudark} alt='' />
-          )}
+              <img src={menudark} alt='' />
+            )}
+          </button>
         </li>
         <li>
           <ul className='Navigation'>
             <li className='navItem'>
               <a href='#Aboutme'>{t('menuitem1')}</a>
+            </li>
+            <li className='navItem'>
+              <a href='#Research'>{t('menuitemResearch')}</a>
             </li>
             <li className='navItem'>
               <a href='#Projects'>{t('menuitem2')}</a>
@@ -120,24 +130,27 @@ const Nav = ({ theme, setTheme, colorScheme, setColorScheme }) => {
             </li>
 
             <li className='ThemeSelector'>
-              {colorScheme === 'dark' ||
-              (colorScheme === 'system' && theme === 'dark') ? (
-                <img
-                  onClick={toggletheme}
-                  src={colorScheme === 'system' ? system_light : dark}
-                  alt={`${colorScheme} image`}
-                  className='themeIcon'
-                  title={t('ChangeTheme')}
-                />
-              ) : (
-                <img
-                  onClick={toggletheme}
-                  src={colorScheme === 'system' ? system : light}
-                  alt={`${colorScheme} image`}
-                  className='themeIcon'
-                  title={t('ChangeTheme')}
-                />
-              )}
+              <button
+                type='button'
+                onClick={toggletheme}
+                aria-label={t('ChangeTheme')}
+                title={t('ChangeTheme')}
+              >
+                {colorScheme === 'dark' ||
+                (colorScheme === 'system' && theme === 'dark') ? (
+                  <img
+                    src={colorScheme === 'system' ? system_light : dark}
+                    alt=''
+                    className='themeIcon'
+                  />
+                ) : (
+                  <img
+                    src={colorScheme === 'system' ? system : light}
+                    alt=''
+                    className='themeIcon'
+                  />
+                )}
+              </button>
             </li>
           </ul>
         </li>
@@ -151,6 +164,9 @@ const Nav = ({ theme, setTheme, colorScheme, setColorScheme }) => {
       >
         <li className='navItem'>
           <a href='#Aboutme'>{t('menuitem1')}</a>
+        </li>
+        <li className='navItem'>
+          <a href='#Research'>{t('menuitemResearch')}</a>
         </li>
         <li className='navItem'>
           <a href='#Projects'>{t('menuitem2')}</a>
