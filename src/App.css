@@ -14,6 +14,9 @@
   --lightInputColor: #f5f5f5;
 
   --textaccent: #ffa500;
+  /* Text color to use on top of a --textaccent background; dark reads
+     well on the bright dark-theme orange. Light theme overrides this. */
+  --onAccent: var(--darkBackground);
   --primaryButton: #208b59;
   --secondButton: #6464e9;
 
@@ -41,6 +44,11 @@ html {
 
 #app[theme='light'] {
   background-color: var(--lightBackground);
+  /* Darker shade of the brand orange: #ffa500 only gives ~1.9:1 contrast
+     on this light background, failing WCAG AA. This hue/shade reaches ~4.9:1. */
+  --textaccent: #996300;
+  /* This darker accent needs light text on top of it (buttons), not dark. */
+  --onAccent: var(--lightBackground);
 
   h1 {
     color: #1e1e1e;
@@ -125,6 +133,14 @@ nav {
     .menuitemtrigger {
       display: none;
 
+      button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        display: flex;
+      }
+
       img {
         width: 40px;
       }
@@ -166,7 +182,13 @@ nav {
     }
 
     .ThemeSelector {
-      cursor: pointer;
+      button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        display: flex;
+      }
 
       img {
         width: 40px;
@@ -266,6 +288,8 @@ header {
 
     .resume {
       cursor: pointer;
+      border: none;
+      font: inherit;
       border-radius: 5px;
       padding: 0.5rem 1rem;
       height: fit-content;
@@ -334,7 +358,7 @@ header {
   }
   button {
     background-color: var(--textaccent);
-    color: var(--darkBackground);
+    color: var(--onAccent);
     text-transform: capitalize;
   }
   .MuiStack-root,
@@ -411,7 +435,7 @@ header {
   }
   button {
     background-color: var(--textaccent);
-    color: var(--darkBackground);
+    color: var(--onAccent);
     text-transform: capitalize;
   }
   .MuiStack-root,
@@ -483,7 +507,7 @@ header {
   }
   button {
     background-color: var(--textaccent);
-    color: var(--darkBackground);
+    color: var(--onAccent);
     text-transform: capitalize;
   }
   .MuiStack-root,
@@ -805,27 +829,10 @@ footer {
   #Projects {
     .projects {
       justify-content: center;
-
-      .projectimga {
-        width: 100%;
-      }
     }
 
-    .projectHover {
-      height: 100%;
-      width: 100%;
-
-      p {
-        font-size: 12px;
-      }
-
-      .techs {
-        flex-wrap: wrap;
-
-        .techicon {
-          width: 20px;
-        }
-      }
+    .techs {
+      flex-wrap: wrap;
     }
   }
   .scroller[data-animated='true'] .scroller__inner:hover {

@@ -17,7 +17,7 @@ const Skills = ({ theme }) => {
   }, [theme, iconsdark, iconslight]);
 
   const renderSkill = (skill, index) => (
-    <Tooltip key={index} title={t(`skillTooltip_${skill.name}`)} arrow>
+    <Tooltip key={index} title={t(`skillName_${skill.name}`)} arrow>
       <img src={skill.icon} alt={skill.name} />
     </Tooltip>
   );

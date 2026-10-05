@@ -6,7 +6,6 @@ import Liknedindark from '../assets/icons/Liknedin-dark.svg';
 import Liknedinlight from '../assets/icons/Liknedin-light.svg';
 import Githubdark from '../assets/icons/github-dark.svg';
 import Githublight from '../assets/icons/github-light.svg';
-// import resumedoc from '../assets/documents/CV_NelsonMorales_1002035487.pdf';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -36,9 +35,9 @@ const Header = ({ theme }) => {
               target='_blank noopener noreferrer'
             >
               {theme === 'dark' ? (
-                <img src={Liknedindark} alt='Likedin Icon' />
+                <img src={Liknedindark} alt='LinkedIn' />
               ) : (
-                <img src={Liknedinlight} alt='Linkedin Icon Light' />
+                <img src={Liknedinlight} alt='LinkedIn' />
               )}
             </a>
             <a
@@ -46,9 +45,9 @@ const Header = ({ theme }) => {
               target='_blank noopener noreferrer'
             >
               {theme === 'dark' ? (
-                <img src={Githubdark} alt='Github Icon ' />
+                <img src={Githubdark} alt='GitHub' />
               ) : (
-                <img src={Githublight} alt='Github Icon dark' />
+                <img src={Githublight} alt='GitHub' />
               )}
             </a>
           </div>
@@ -58,21 +57,21 @@ const Header = ({ theme }) => {
           <div className='status'>
             {openwork ? (
               <div className='avilable'>
-                <img src={OpenWork} alt='Open work Icon' />
+                <img src={OpenWork} alt='' />
                 {t('OpenToWork')}
               </div>
             ) : (
               <div className='close'>
-                <img src={CloseWork} alt='Open work Icon' />
+                <img src={CloseWork} alt='' />
                 <span></span>
                 {t('CloseToWork')}
               </div>
             )}
           </div>
-          <div className='resume' onClick={WatchPdf}>
+          <button type='button' className='resume' onClick={WatchPdf}>
             <img src={resume} alt='' />
             <p>{t('Resume')}</p>
-          </div>
+          </button>
         </div>
       </section>
     </header>
